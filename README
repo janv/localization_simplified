@@ -1,0 +1,111 @@
+=Localization Simplified (LocalizationSimplified)
+
+Localization Simplified plugin for Ruby on Rails. Really simple localization. 
+Written by Jesper Rønn-Jensen ( http://justaddwater.dk/ )
+
+Plugin available at http://visitjesper.homeip.net/plugins/ 
+IMPORTANT: Plugin directory likely to move to more appropriate (subversion) location anytime. 
+
+The goal is to have a dead simple plugin for one-language (non-english) Rails 
+applications. Many of the existing localization / internationalization plugins are 
+too big for this and hard to get started with. Just dump this plugin in 
+/vendor/plugins/, set your language and off you go.
+
+Unlike the more advanced plugins, you don't have to translate anything in your 
+view files. Just use the standard Rails commands you're used to.
+
+The simple approach also makes limits. Make sure you understand them to decide if 
+this plugin is right for you.
+
+I use this plugin when creating new projects. Then later in the development 
+process I can decide to change to a more advanced localization plugin (if necessary)
+
+===What it does
+This plugin modifies the following most used helpers for Rails
+* Sets UTF-8 content-type HTTP header
+* Sets UTF-8 connection to database 
+* Localized monthnames on date_select etc. (but not changing the order of Y-M-D)
+* Localized ActiveRecord errors (and error headings)
+* Localized distance_of_time_in_words
+* Localized to_currency (but not changing the order of unit/currency)
+* Simple pluralization also available in the lang-file (but currently only used 
+  for pluralizing "error"=>"errors" in local language)
+* Changes standard Rails methods. In this way, there is no tedious rewrite of 
+  localization functions in your view files
+
+
+===Limitations
+* More advanced features are not likely to be available here.
+* No translation of models or the like.
+* If you want support for multiple languages, use another L10N/I18n plugin, like 
+  GLoc or Globalize
+* No support for re-ordering date_select fields or currency indicators. This can 
+  be done fairly easy and is already implemented in other frameworks.
+The reason why I have not reordered the date_select fields or currency is that 
+it will introduce an unnecessary dependency here (because functions have to be recoded).
+
+
+===Supported languages
+Currently supported languages:
+* English (for running test cases and comparing to normal texts)
+* German 
+* Spanish
+* Danish
+* Swedish Chef, and Pirate talk (just for the fun of it)
+* any other language you want. Just dump your translation in the /lib folder 
+
+
+===Usage:
+in init.rb, set your language. That's it. Now your db connection is running UTF-8 and standard Rails output is localized.
+
+If your view files contains text, you probably also want to save your files as UTF-8.
+
+
+===Installation:
+
+1) Just copy this plugin into your /vendor/lib folder
+2) Choose your lang-file in init.rb (default is Danish because I am Danish)
+
+ 
+
+A special note of WARNING: All files here are saved using UTF-8 encoding.
+It's not required for working, I guess, but other encodings could bring you in trouble.
+
+ 
+===TODO 
+* Rake task that modifies all view-files and converts them to UTF-8 
+* Also a task that modifies all generators to use UTF-8
+* Other helpers that need modification 
+  (your suggestions and contributions are welcome)
+* Test that this works with the Rails version it's installed next to
+* Add test cases to verify it works properly
+* In particular, make a test that compares original Rails texts to the texts of 
+  the overridden functions from this plugin
+* Modify to_boolean_select_tag with localized true/false?? (normally, i'd prefer 
+  to use a checkbox for this and NOT a select tag)
+
+===DONE
+* Localized version of to_currency helper (2006-08-07)  
+* Added swedish language (2006-08-09)
+* Added test scaffold  (2006-08-09)
+* Localized version of Array.to_sentence (2006-08-09)
+* Added tests for plugin (2006-08-13)
+* Added MIT-license, copied from Ruby on Rails (2006-08-13)
+* Added Date and Time#to_formatted_s with locale specific strings (2006-08-18)
+* Added Pirate language, thanks to Tobias Michaelsen (2006-08-18)
+
+===Your help
+Feel free to use, translate, modify and improve this code. 
+Do send me translations, improvements, etc. I cannot promise to use it, 
+but chances are that I will unless it bloats the code here completely or makes 
+code harder to maintain.
+
+I added FIXME notes in the code to indicate where I also could use help.
+
+===Credits
+This plugin uses a few bits and pieces from other Rails plugins GLoc (http://rubyforge.org/projects/gloc/) and swe_rails (http://opensource.ki.se/swe_rails.html)
+
+
+Created 2006-07-28 by 
+Jesper Rønn-Jensen http://justaddwater.dk/ 
+
