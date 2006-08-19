@@ -56,7 +56,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Sun Aug 13 15:37:52 Romance Daylight Time 2006</td>
+      <td>Sat Aug 19 21:48:17 Romance Daylight Time 2006</td>
     </tr>
     </table>
   </div>
@@ -69,17 +69,14 @@
   <div id="contextContent">
 
     <div id="description">
-      <h1>Localization Simplified (<a href="../classes/LocalizationSimplified.html">LocalizationSimplified</a>)</h1>
+      <p>
+﻿=Localization Simplified (<a
+href="../classes/LocalizationSimplified.html">LocalizationSimplified</a>)
+</p>
 <p>
 Localization Simplified plugin for Ruby on Rails. Really simple
 localization. Written by Jesper Rønn-Jensen ( <a
 href="http://justaddwater.dk">justaddwater.dk</a>/ )
-</p>
-<p>
-Plugin available at <a
-href="http://visitjesper.homeip.net/plugins">visitjesper.homeip.net/plugins</a>/
-IMPORTANT: Plugin directory likely to move to more appropriate (subversion)
-location anytime.
 </p>
 <p>
 The goal is to have a dead simple plugin for one-language (non-english)
@@ -175,10 +172,24 @@ Currently supported languages:
 <li>Danish
 
 </li>
-<li>Swedish Chef (just for the fun of it)
+<li>Swedish Chef, and Pirate talk (just for the fun of it)
 
 </li>
 <li>any other language you want. Just dump your translation in the /lib folder
+
+</li>
+</ul>
+<h3>Download code</h3>
+<ul>
+<li>Project homepage: <a
+href="http://rubyforge.org/projects/l10n-simplified">rubyforge.org/projects/l10n-simplified</a>/
+
+</li>
+<li>Subversion access: svn checkout svn://rubyforge.org/var/svn/l10n-simplified
+
+</li>
+<li>Browse: <a
+href="http://rubyforge.org/plugins/scmsvn/viewcvs.php/?root=l10n-simplified">rubyforge.org/plugins/scmsvn/viewcvs.php/?root=l10n-simplified</a>
 
 </li>
 </ul>
@@ -193,7 +204,8 @@ as UTF-8.
 </p>
 <h3>Installation:</h3>
 <p>
-Just copy this plugin into your /vendor/lib folder
+1) Just copy this plugin into your /vendor/lib folder 2) Choose your
+lang-file in init.rb (default is Danish because I am Danish)
 </p>
 <p>
 A special note of WARNING: All files here are saved using UTF-8 encoding.
@@ -248,6 +260,13 @@ href="../classes/Array.html#M000001">Array.to_sentence</a> (2006-08-09)
 <li>Added MIT-license, copied from Ruby on Rails (2006-08-13)
 
 </li>
+<li>Added <a href="../classes/Date.html">Date</a> and Time#to_formatted_s with
+locale specific strings (2006-08-18)
+
+</li>
+<li>Added Pirate language, thanks to Tobias Michaelsen (2006-08-18)
+
+</li>
 </ul>
 <h3>Your help</h3>
 <p>
@@ -255,6 +274,9 @@ Feel free to use, translate, modify and improve this code. Do send me
 translations, improvements, etc. I cannot promise to use it, but chances
 are that I will unless it bloats the code here completely or makes code
 harder to maintain.
+</p>
+<p>
+I added FIXME notes in the code to indicate where I also could use help.
 </p>
 <h3>Credits</h3>
 <p>
