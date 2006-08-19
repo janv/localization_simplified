@@ -1,10 +1,6 @@
-=Localization Simplified (LocalizationSimplified)
+﻿=Localization Simplified (LocalizationSimplified)
 
-Localization Simplified plugin for Ruby on Rails. Really simple localization. 
-Written by Jesper Rønn-Jensen ( http://justaddwater.dk/ )
-
-Plugin available at http://visitjesper.homeip.net/plugins/ 
-IMPORTANT: Plugin directory likely to move to more appropriate (subversion) location anytime. 
+Localization Simplified plugin for Ruby on Rails. Really simple localization. Written by Jesper Rønn-Jensen ( http://justaddwater.dk/ )
 
 The goal is to have a dead simple plugin for one-language (non-english) Rails 
 applications. Many of the existing localization / internationalization plugins are 
@@ -53,6 +49,12 @@ Currently supported languages:
 * Danish
 * Swedish Chef, and Pirate talk (just for the fun of it)
 * any other language you want. Just dump your translation in the /lib folder 
+
+===Download code
+* Project homepage: http://rubyforge.org/projects/l10n-simplified/
+* Subversion access: svn checkout svn://rubyforge.org/var/svn/l10n-simplified
+* Browse: http://rubyforge.org/plugins/scmsvn/viewcvs.php/?root=l10n-simplified
+
 
 
 ===Usage:
