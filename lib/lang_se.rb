@@ -66,7 +66,7 @@ module LocalizationSimplified
       :separator => ",",
       :delimiter => ".",
       :order => nil
-      #to support for instance Swedish format, the order is different: Unit comes last (ex. "1.234,00 dkr.")
+      #to support for instance Swedish format, the order is different: Unit comes last (ex. "1.234,00 kr.")
     }
   end
 
