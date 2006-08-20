@@ -4,8 +4,10 @@
 require 'lang_da'
 #require 'lang_de'
 #require 'lang_es'
+#require 'lang_nl'
 #require 'lang_se'
 #require 'lang_chef'
+#require 'lang_pirate'
 # You can Add your own localization file and add it here
 
 
