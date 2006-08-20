@@ -1,5 +1,5 @@
 # lang_nl.rb
-# Dutch translation by Jeroen Houten
+# Dutch translation by Jeroen Houben
 
 
 
