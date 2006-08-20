@@ -46,7 +46,9 @@ Currently supported languages:
 * English (for running test cases and comparing to normal texts)
 * German 
 * Spanish
+* Dutch
 * Danish
+* Swedish
 * Swedish Chef, and Pirate talk (just for the fun of it)
 * any other language you want. Just dump your translation in the /lib folder 
 
@@ -87,14 +89,15 @@ It's not required for working, I guess, but other encodings could bring you in t
   to use a checkbox for this and NOT a select tag)
 
 ===DONE
-* Localized version of to_currency helper (2006-08-07)  
-* Added swedish language (2006-08-09)
-* Added test scaffold  (2006-08-09)
-* Localized version of Array.to_sentence (2006-08-09)
-* Added tests for plugin (2006-08-13)
-* Added MIT-license, copied from Ruby on Rails (2006-08-13)
+* Added Dutch translation lang_nl.rb, thanks to Jeroen Houben (2006-08-20)
+* Added Pirate language lang_pirate.rb, thanks to Tobias Michaelsen (2006-08-18)
 * Added Date and Time#to_formatted_s with locale specific strings (2006-08-18)
-* Added Pirate language, thanks to Tobias Michaelsen (2006-08-18)
+* Added MIT-license, copied from Ruby on Rails (2006-08-13)
+* Added tests for plugin (2006-08-13)
+* Localized version of Array.to_sentence (2006-08-09)
+* Added test scaffold  (2006-08-09)
+* Added swedish language, thanks to Olle Johnsson (2006-08-09)
+* Localized version of to_currency helper (2006-08-07)  
 
 ===Your help
 Feel free to use, translate, modify and improve this code. 
