@@ -6,7 +6,7 @@
 module LocalizationSimplified
  About = {
    :lang => "nl",
-   :updated => "2006-08-20"
+   :updated => "2006-08-23"
  }
 
  class ActiveRecord
@@ -42,7 +42,7 @@ module LocalizationSimplified
      :one_day             => "1 dag",
      :x_days              => "%d dagen"
    }
-   Monthnames     = [nil] + %w{Januari Februari Maart April Mei Juni July Augustus September October November December}
+   Monthnames     = [nil] + %w{Januari Februari Maart April Mei Juni Juli Augustus September October November December}
    AbbrMonthnames = [nil] + %w{Jan Feb Mar Apr Mei Jun Jul Aug Sep Oct Nov Dec}
    Daynames       = %w{Zondag Maandag Dinsdag Woensdag Donderdag Vrijdag Zaterdag}
    AbbrDaynames   = %w{Zo Ma Di Wo Do Vr Za}
@@ -81,9 +81,9 @@ end
 
 # Use the inflector below to translate "error" from
 # @@default_error_messages[:error_translation] above (if necessary)
- Inflector.inflections do |inflect|
-   inflect.plural /^(fout)$/i, '\1en'
+Inflector.inflections do |inflect|
+#   inflect.plural /^(ox)$/i, '\1er'
 #   inflect.singular /^(ox)en/i, '\1'
-#   inflect.irregular 'person people'
+   inflect.irregular 'fout', 'fouten'
 #   inflect.uncountable %w( information )
- end
+end
