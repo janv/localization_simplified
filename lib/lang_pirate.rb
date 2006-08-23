@@ -6,7 +6,7 @@
 module LocalizationSimplified
   About = {
     :lang => "pirate",
-    :updated => "2006-08-18"
+    :updated => "2006-08-23"
   }
 
   class ActiveRecord
@@ -58,6 +58,9 @@ module LocalizationSimplified
       :short    => "%d %b %H:%M",
       :long     => "%B %d, %Y %H:%M"
     }
+    DateSelectOrder = {
+      :order    => [:year, :month, :day] #default Rails is US ordered: :order => [:year, :month, :day]
+    }
   end
 
   class NumberHelper
@@ -72,7 +75,7 @@ module LocalizationSimplified
 
   class ArrayHelper
     ToSentenceTexts = {
-      :connector => 'and', 
+      :connector => 'and',
       :skip_last_comma => false
     }
   end
@@ -82,7 +85,7 @@ end
 # Use the inflector below to translate "error" from
 # @@default_error_messages[:error_translation] above (if necessary)
 # Inflector.inflections do |inflect|
-#   inflect.plural /^(ox)$/i, '\1er'
+#   inflect.plural /^(ox)$/i, '\1en'
 #   inflect.singular /^(ox)en/i, '\1'
 #   inflect.irregular 'person people'
 #   inflect.uncountable %w( information )

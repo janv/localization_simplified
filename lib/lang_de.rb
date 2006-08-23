@@ -6,7 +6,7 @@
 module LocalizationSimplified
   About = {
     :lang => "de",
-    :updated => "2006-08-17"
+    :updated => "2006-08-23"
   }
 
   class ActiveRecord
@@ -58,22 +58,25 @@ module LocalizationSimplified
       :short    => "%d %b %H:%M",
       :long     => "%B %d, %Y %H:%M"
     }
+    DateSelectOrder = {
+      :order    => [:day, :month, :year] #default Rails is US ordered: :order => [:year, :month, :day]
+    }
   end
 
   class NumberHelper
     CurrencyOptions = {
-      :unit => "EUR ",
+      :unit => "€",
       :separator => ",",
       :delimiter => ".",
       :order => nil
     }
   end
-    
-	class ArrayHelper
-		ToSentenceTexts = {
-			:connector => 'und', 
-			:skip_last_comma => true
-		}
+
+  class ArrayHelper
+    ToSentenceTexts = {
+      :connector => 'und', 
+      :skip_last_comma => true
+    }
   end
 end
 
