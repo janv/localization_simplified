@@ -15,7 +15,7 @@ end
 desc 'Generate documentation for the l10n_simplified plugin.'
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'L10nSimplified'
+  rdoc.title    = 'LocalizationSimplified'
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
