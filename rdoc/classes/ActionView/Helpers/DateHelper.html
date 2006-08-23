@@ -86,7 +86,9 @@ Modify <a href="DateHelper.html">DateHelper</a> to use text from lang-file
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000005">distance_of_time_in_words</a>&nbsp;&nbsp;
+      <a href="#M000007">date_select</a>&nbsp;&nbsp;
+      <a href="#M000008">datetime_select</a>&nbsp;&nbsp;
+      <a href="#M000006">distance_of_time_in_words</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -99,6 +101,37 @@ Modify <a href="DateHelper.html">DateHelper</a> to use text from lang-file
 
 
 
+    <div id="aliases-list">
+      <h3 class="section-bar">External Aliases</h3>
+
+      <div class="name-list">
+                        <table summary="aliases">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">distance_of_time_in_words</td>
+          <td>-></td>
+          <td class="context-item-value">old_distance_of_time_in_words</td>
+        </tr>
+      <tr class="top-aligned-row context-row">
+        <td>&nbsp;</td>
+        <td colspan="2" class="context-item-desc">
+Modify <a href="DateHelper.html">DateHelper</a> <a
+href="DateHelper.html#M000006">distance_of_time_in_words</a>
+
+</td>
+      </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">date_select</td>
+          <td>-></td>
+          <td class="context-item-value">orig_date_select</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">datetime_select</td>
+          <td>-></td>
+          <td class="context-item-value">orig_datetime_select</td>
+        </tr>
+                        </table>
+      </div>
+    </div>
 
 
       
@@ -108,52 +141,78 @@ Modify <a href="DateHelper.html">DateHelper</a> to use text from lang-file
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000005" class="method-detail">
-        <a name="M000005"></a>
+      <div id="method-M000007" class="method-detail">
+        <a name="M000007"></a>
 
         <div class="method-heading">
-          <a href="#M000005" class="method-signature">
-          <span class="method-name">distance_of_time_in_words</span><span class="method-args">(from_time, to_time = 0, include_seconds = false)</span>
+          <a href="#M000007" class="method-signature">
+          <span class="method-name">date_select</span><span class="method-args">(object_name, method, options = {})</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
-Modify <a href="DateHelper.html">DateHelper</a> <a
-href="DateHelper.html#M000005">distance_of_time_in_words</a>
+Blend default options with localized :order option
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000005-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000005-source">
+            onclick="toggleCode('M000007-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000007-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/localization_simplified.rb, line 48</span>
-48:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">distance_of_time_in_words</span>(<span class="ruby-identifier">from_time</span>, <span class="ruby-identifier">to_time</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">include_seconds</span> = <span class="ruby-keyword kw">false</span>)
-49:         <span class="ruby-identifier">from_time</span> = <span class="ruby-identifier">from_time</span>.<span class="ruby-identifier">to_time</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">from_time</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:to_time</span>)
-50:         <span class="ruby-identifier">to_time</span> = <span class="ruby-identifier">to_time</span>.<span class="ruby-identifier">to_time</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">to_time</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:to_time</span>)
-51:         <span class="ruby-identifier">distance_in_minutes</span> = (((<span class="ruby-identifier">to_time</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">from_time</span>).<span class="ruby-identifier">abs</span>)<span class="ruby-operator">/</span><span class="ruby-value">60</span>).<span class="ruby-identifier">round</span>
-52:         <span class="ruby-identifier">distance_in_seconds</span> = ((<span class="ruby-identifier">to_time</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">from_time</span>).<span class="ruby-identifier">abs</span>).<span class="ruby-identifier">round</span>
-53:                                 
-54:                       <span class="ruby-comment cmt">#First, I invent a variable (makes it easier for future i10n)</span>
-55:                 <span class="ruby-identifier">messages</span> = <span class="ruby-constant">LocalizationSimplified</span><span class="ruby-operator">::</span><span class="ruby-constant">DateHelper</span><span class="ruby-operator">::</span><span class="ruby-constant">Texts</span> <span class="ruby-comment cmt">#localized</span>
-56:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">distance_in_minutes</span>
-57:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>
-58:             <span class="ruby-keyword kw">return</span> (<span class="ruby-identifier">distance_in_minutes</span><span class="ruby-operator">==</span><span class="ruby-value">0</span>) <span class="ruby-operator">?</span> <span class="ruby-value str">'less than a minute'</span> <span class="ruby-operator">:</span> <span class="ruby-value str">'1 minute'</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">include_seconds</span>
-59:             <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">distance_in_seconds</span>
-60:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">5</span>   <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">format</span>( <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:less_than_x_seconds</span>], <span class="ruby-value">5</span> )
-61:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">6</span><span class="ruby-operator">..</span><span class="ruby-value">10</span>  <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">format</span>( <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:less_than_x_seconds</span>], <span class="ruby-value">10</span> )
-62:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">11</span><span class="ruby-operator">..</span><span class="ruby-value">20</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">format</span>( <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:less_than_x_seconds</span>], <span class="ruby-value">20</span> )
-63:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">21</span><span class="ruby-operator">..</span><span class="ruby-value">40</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:half_a_minute</span>]
-64:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">41</span><span class="ruby-operator">..</span><span class="ruby-value">59</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:less_than_a_minute</span>]
-65:               <span class="ruby-keyword kw">else</span>             <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:one_minute</span>]
-66:             <span class="ruby-keyword kw">end</span>
-67:                                 
-68:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">2</span><span class="ruby-operator">..</span><span class="ruby-value">45</span>      <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">format</span>(<span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:x_minutes</span>], <span class="ruby-identifier">distance_in_minutes</span>)
-69:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">46</span><span class="ruby-operator">..</span><span class="ruby-value">90</span>     <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:one_hour</span>]
-70:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">90</span><span class="ruby-operator">..</span><span class="ruby-value">1440</span>   <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">format</span>( <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:x_hours</span>], (<span class="ruby-identifier">distance_in_minutes</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-value">60.0</span>).<span class="ruby-identifier">round</span> )
-71:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">1441</span><span class="ruby-operator">..</span><span class="ruby-value">2880</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:one_day</span>]
-72:           <span class="ruby-keyword kw">else</span>                                  <span class="ruby-identifier">format</span>( <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:x_days</span>], (<span class="ruby-identifier">distance_in_minutes</span> <span class="ruby-operator">/</span> <span class="ruby-value">1440</span>).<span class="ruby-identifier">round</span> )
-73:         <span class="ruby-keyword kw">end</span>
-74:       <span class="ruby-keyword kw">end</span>
+     <span class="ruby-comment cmt"># File lib/localization_simplified.rb, line 117</span>
+117:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">date_select</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span> = {})
+118:         <span class="ruby-identifier">options</span>.<span class="ruby-identifier">reverse_merge!</span>(<span class="ruby-constant">LocalizationSimplified</span><span class="ruby-operator">::</span><span class="ruby-constant">DateHelper</span><span class="ruby-operator">::</span><span class="ruby-constant">DateSelectOrder</span>)
+119:         <span class="ruby-identifier">orig_date_select</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>)
+120:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
+
+        <div class="method-heading">
+          <a href="#M000008" class="method-signature">
+          <span class="method-name">datetime_select</span><span class="method-args">(object_name, method, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Blend default options with localized :order option
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000008-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000008-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/localization_simplified.rb, line 126</span>
+126:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">datetime_select</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span> = {})
+127:         <span class="ruby-identifier">options</span>.<span class="ruby-identifier">reverse_merge!</span>(<span class="ruby-constant">LocalizationSimplified</span><span class="ruby-operator">::</span><span class="ruby-constant">DateHelper</span><span class="ruby-operator">::</span><span class="ruby-constant">DateSelectOrder</span>)
+128:         <span class="ruby-identifier">orig_datetime_select</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>)
+129:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000006" class="method-detail">
+        <a name="M000006"></a>
+
+        <div class="method-heading">
+          <a href="#M000006" class="method-signature">
+          <span class="method-name">distance_of_time_in_words</span><span class="method-args">(from_time, to_time = 0, include_seconds = false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000006-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000006-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/localization_simplified.rb, line 93</span>
+93:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">distance_of_time_in_words</span>(<span class="ruby-identifier">from_time</span>, <span class="ruby-identifier">to_time</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">include_seconds</span> = <span class="ruby-keyword kw">false</span>)
+94:         <span class="ruby-constant">LocalizationSimplified</span><span class="ruby-operator">::</span><span class="ruby-identifier">distance_of_time_in_words</span>(<span class="ruby-identifier">from_time</span>, <span class="ruby-identifier">to_time</span>, <span class="ruby-identifier">include_seconds</span>)
+95:       <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

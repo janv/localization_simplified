@@ -74,7 +74,8 @@
 
     <div id="description">
       <p>
-Modifie ActiveRecord to use error message headers (text from lang-file)
+Modifiy <a href="../../ActiveRecord.html">ActiveRecord</a> to use error
+message headers (text from lang-file)
 </p>
 
     </div>
@@ -86,7 +87,7 @@ Modifie ActiveRecord to use error message headers (text from lang-file)
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000004">error_messages_for</a>&nbsp;&nbsp;
+      <a href="#M000005">error_messages_for</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -99,6 +100,19 @@ Modifie ActiveRecord to use error message headers (text from lang-file)
 
 
 
+    <div id="aliases-list">
+      <h3 class="section-bar">External Aliases</h3>
+
+      <div class="name-list">
+                        <table summary="aliases">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">error_messages_for</td>
+          <td>-></td>
+          <td class="context-item-value">old_error_messages_for</td>
+        </tr>
+                        </table>
+      </div>
+    </div>
 
 
       
@@ -108,40 +122,40 @@ Modifie ActiveRecord to use error message headers (text from lang-file)
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000004" class="method-detail">
-        <a name="M000004"></a>
+      <div id="method-M000005" class="method-detail">
+        <a name="M000005"></a>
 
         <div class="method-heading">
-          <a href="#M000004" class="method-signature">
+          <a href="#M000005" class="method-signature">
           <span class="method-name">error_messages_for</span><span class="method-args">(object_name, options = {})</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000004-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000004-source">
+            onclick="toggleCode('M000005-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000005-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/localization_simplified.rb, line 21</span>
-21:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">error_messages_for</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">options</span> = {})
-22:                                 <span class="ruby-identifier">messages</span> = <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Errors</span>.<span class="ruby-identifier">default_error_messages</span>
-23:         <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">symbolize_keys</span>
-24:         <span class="ruby-identifier">object</span> = <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-node">&quot;@#{object_name}&quot;</span>)
-25:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">object</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">object</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">empty?</span>
-26:           <span class="ruby-identifier">content_tag</span>(<span class="ruby-value str">&quot;div&quot;</span>,
-27:             <span class="ruby-identifier">content_tag</span>(
-28:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:header_tag</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;h2&quot;</span>,
-29:                                                         <span class="ruby-identifier">format</span>( <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:error_header</span>], <span class="ruby-identifier">pluralize</span>(<span class="ruby-identifier">object</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">count</span>, <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:error_translation</span>]), <span class="ruby-identifier">object_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">&quot;_&quot;</span>, <span class="ruby-value str">&quot; &quot;</span>)  )
-30:               <span class="ruby-comment cmt">#&quot;#{pluralize(object.errors.count, &quot;error&quot;)} prohibited this #{object_name.to_s.gsub(&quot;_&quot;, &quot; &quot;)} from being saved&quot;</span>
-31:             ) <span class="ruby-operator">+</span>
-32:             <span class="ruby-identifier">content_tag</span>(<span class="ruby-value str">&quot;p&quot;</span>, <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:error_subheader</span>]) <span class="ruby-operator">+</span>
-33:             <span class="ruby-identifier">content_tag</span>(<span class="ruby-value str">&quot;ul&quot;</span>, <span class="ruby-identifier">object</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">full_messages</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">msg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">content_tag</span>(<span class="ruby-value str">&quot;li&quot;</span>, <span class="ruby-identifier">msg</span>) }),
-34:             <span class="ruby-value str">&quot;id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:id</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;errorExplanation&quot;</span>, <span class="ruby-value str">&quot;class&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:class</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;errorExplanation&quot;</span>
-35:           )
-36:         <span class="ruby-keyword kw">else</span>
-37:           <span class="ruby-value str">&quot;&quot;</span>
-38:         <span class="ruby-keyword kw">end</span>
-39:       <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File lib/localization_simplified.rb, line 65</span>
+65:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">error_messages_for</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">options</span> = {})
+66:         <span class="ruby-identifier">messages</span> = <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Errors</span>.<span class="ruby-identifier">default_error_messages</span>
+67:         <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">symbolize_keys</span>
+68:         <span class="ruby-identifier">object</span> = <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-node">&quot;@#{object_name}&quot;</span>)
+69:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">object</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">object</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">empty?</span>
+70:           <span class="ruby-identifier">content_tag</span>(<span class="ruby-value str">&quot;div&quot;</span>,
+71:             <span class="ruby-identifier">content_tag</span>(
+72:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:header_tag</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;h2&quot;</span>,
+73:               <span class="ruby-identifier">format</span>( <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:error_header</span>], <span class="ruby-identifier">pluralize</span>(<span class="ruby-identifier">object</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">count</span>, <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:error_translation</span>]), <span class="ruby-identifier">object_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">&quot;_&quot;</span>, <span class="ruby-value str">&quot; &quot;</span>)  )
+74:               <span class="ruby-comment cmt">#&quot;#{pluralize(object.errors.count, &quot;error&quot;)} prohibited this #{object_name.to_s.gsub(&quot;_&quot;, &quot; &quot;)} from being saved&quot;</span>
+75:             ) <span class="ruby-operator">+</span>
+76:             <span class="ruby-identifier">content_tag</span>(<span class="ruby-value str">&quot;p&quot;</span>, <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:error_subheader</span>]) <span class="ruby-operator">+</span>
+77:             <span class="ruby-identifier">content_tag</span>(<span class="ruby-value str">&quot;ul&quot;</span>, <span class="ruby-identifier">object</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">full_messages</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">msg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">content_tag</span>(<span class="ruby-value str">&quot;li&quot;</span>, <span class="ruby-identifier">msg</span>) }),
+78:             <span class="ruby-value str">&quot;id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:id</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;errorExplanation&quot;</span>, <span class="ruby-value str">&quot;class&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:class</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;errorExplanation&quot;</span>
+79:           )
+80:         <span class="ruby-keyword kw">else</span>
+81:           <span class="ruby-value str">&quot;&quot;</span>
+82:         <span class="ruby-keyword kw">end</span>
+83:       <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

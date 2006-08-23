@@ -78,10 +78,27 @@
 
   <div id="contextContent">
 
+    <div id="description">
+      <p>
+Modification of default <a href="Time.html">Time</a> format using
+Time.to_formatted_s(:default) Localizes the hash with the formats :default,
+:short, :long Usage: &lt;% t = Time.parse(&#8216;2006-12-25 13:55&#8217;)
+%&gt; &lt;%= t.to_formatted_s(:short) #=&gt; outputs time in localized
+format %&gt; &lt;%= t #=&gt; outputs time in localized format %&gt;
+</p>
+
+    </div>
 
 
    </div>
 
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000001">strftime</a>&nbsp;&nbsp;
+      </div>
+    </div>
 
   </div>
 
@@ -91,37 +108,64 @@
     <div id="section">
 
 
-    <div id="constants-list">
-      <h3 class="section-bar">Constants</h3>
+
+    <div id="aliases-list">
+      <h3 class="section-bar">External Aliases</h3>
 
       <div class="name-list">
-        <table summary="Constants">
+                        <table summary="aliases">
         <tr class="top-aligned-row context-row">
-          <td class="context-item-name">RFC2822_DAY_NAME</td>
-          <td>=</td>
-          <td class="context-item-value">LocalizationSimplified::DateHelper::AbbrDaynames</td>
-          <td width="3em">&nbsp;</td>
-          <td class="context-item-desc">
-FIXME as these are defined as Ruby constants, they can&#8217;t be
-overwritten
-
-</td>
+          <td class="context-item-name">strftime</td>
+          <td>-></td>
+          <td class="context-item-value">old_strftime</td>
         </tr>
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">RFC2822_MONTH_NAME</td>
-          <td>=</td>
-          <td class="context-item-value">LocalizationSimplified::DateHelper::AbbrMonthnames</td>
-        </tr>
-        </table>
+                        </table>
       </div>
     </div>
-
 
 
       
 
 
     <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000001" class="method-detail">
+        <a name="M000001"></a>
+
+        <div class="method-heading">
+          <a href="#M000001" class="method-signature">
+          <span class="method-name">strftime</span><span class="method-args">(date)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Pre-translate format of <a href="Time.html">Time</a> before the time string
+is translated by strftime. The <tt>:default</tt> time format is changed by
+localizing month and daynames. Also Rails ActiveSupport allow us to modify
+the <tt>:default</tt> timeformatting string. Originally, its <tt>:default
+=&gt; &quot;%a, %d %b %Y %H:%M:%S %z&quot;</tt> (RFC2822 names), but as it
+can be modified in this plugin, and we can end up with a different file
+format in logfiles, etc
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000001-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000001-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/localization_simplified.rb, line 166</span>
+166:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">strftime</span>(<span class="ruby-identifier">date</span>) 
+167:     <span class="ruby-constant">LocalizationSimplified</span><span class="ruby-operator">::</span><span class="ruby-identifier">localize_strftime</span>(<span class="ruby-identifier">date</span>, <span class="ruby-keyword kw">self</span>)
+168:     <span class="ruby-identifier">old_strftime</span>(<span class="ruby-identifier">date</span>)
+169:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
 
 
   </div>

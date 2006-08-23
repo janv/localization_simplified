@@ -160,6 +160,11 @@
           <td class="context-item-value">{       :default  =&gt; &quot;%a, %d %b %Y %H:%M:%S %z&quot;,       :short    =&gt; &quot;%d %b %H:%M&quot;,       :long     =&gt; &quot;%B %d, %Y %H:%M&quot;</td>
         </tr>
         <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateSelectOrder</td>
+          <td>=</td>
+          <td class="context-item-value">{       :order    =&gt; [:year, :month, :day]</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
           <td class="context-item-name">Texts</td>
           <td>=</td>
           <td class="context-item-value">{       :less_than_x_seconds =&gt; &quot;under %d sekunder&quot;,       :half_a_minute       =&gt; &quot;et halvt minut&quot;,       :less_than_a_minute  =&gt; &quot;under et minut&quot;,       :one_minute          =&gt; &quot;1 minut&quot;,       :x_minutes           =&gt; &quot;%d minutter&quot;,       :one_hour            =&gt; &quot;omkring en time&quot;,       :x_hours             =&gt; &quot;omkring %d timer&quot;,       :one_day             =&gt; &quot;1 dag&quot;,       :x_days              =&gt; &quot;%d dage&quot;</td>
@@ -192,7 +197,12 @@
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">TimeFormats</td>
           <td>=</td>
-          <td class="context-item-value">{       :default  =&gt; &quot;%d %b %Y %H:%M&quot;,       :short    =&gt; &quot;%d %b %H:%M&quot;,       :long     =&gt; &quot;%d %B %Y %H:%M&quot;</td>
+          <td class="context-item-value">{       :default  =&gt; &quot;%A d. %d %B %Y %H:%M&quot;, #no timezone       :short    =&gt; &quot;%d. %b %H:%M&quot;,       :long     =&gt; &quot;%d. %B %Y %H:%M&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateSelectOrder</td>
+          <td>=</td>
+          <td class="context-item-value">{       :order    =&gt; [:day, :month, :year]</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">Texts</td>
@@ -230,6 +240,11 @@
           <td class="context-item-value">{       :default  =&gt; &quot;%a, %d %b %Y %H:%M:%S %z&quot;,       :short    =&gt; &quot;%d %b %H:%M&quot;,       :long     =&gt; &quot;%B %d, %Y %H:%M&quot;</td>
         </tr>
         <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateSelectOrder</td>
+          <td>=</td>
+          <td class="context-item-value">{       :order    =&gt; [:day, :month, :year]</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
           <td class="context-item-name">Texts</td>
           <td>=</td>
           <td class="context-item-value">{       :less_than_x_seconds =&gt; &quot;less than %d seconds&quot;,       :half_a_minute       =&gt; &quot;half a minute&quot;,       :less_than_a_minute  =&gt; &quot;less than a minute&quot;,       :one_minute          =&gt; &quot;1 minute&quot;,       :x_minutes           =&gt; &quot;%d minutes&quot;,       :one_hour            =&gt; &quot;about 1 hour&quot;,       :x_hours             =&gt; &quot;about %d hours&quot;,       :one_day             =&gt; &quot;1 day&quot;,       :x_days              =&gt; &quot;%d days&quot;</td>
@@ -263,6 +278,11 @@
           <td class="context-item-name">TimeFormats</td>
           <td>=</td>
           <td class="context-item-value">{       :default  =&gt; &quot;%a, %d %b %Y %H:%M:%S %z&quot;,       :short    =&gt; &quot;%d %b %H:%M&quot;,       :long     =&gt; &quot;%B %d, %Y %H:%M&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateSelectOrder</td>
+          <td>=</td>
+          <td class="context-item-value">{       :order    =&gt; [:year, :month, :day]</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">Texts</td>
@@ -300,14 +320,19 @@
           <td class="context-item-value">{       :default  =&gt; &quot;%a, %d %b %Y %H:%M:%S %z&quot;,       :short    =&gt; &quot;%d %b %H:%M&quot;,       :long     =&gt; &quot;%B %d, %Y %H:%M&quot;</td>
         </tr>
         <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateSelectOrder</td>
+          <td>=</td>
+          <td class="context-item-value">{       :order    =&gt; [:day, :month, :year]</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
           <td class="context-item-name">Texts</td>
           <td>=</td>
-          <td class="context-item-value">{      :less_than_x_seconds =&gt; &quot;minder dan %d seconden&quot;,      :half_a_minute       =&gt; &quot;een halve minuut&quot;,      :less_than_a_minute  =&gt; &quot;minder dan een halve minuut&quot;,      :one_minute          =&gt; &quot;1 minuut&quot;,      :x_minutes           =&gt; &quot;%d minuten&quot;,      :one_hour            =&gt; &quot;ongeveer 1 uur&quot;,      :x_hours             =&gt; &quot;ongeveer %d uur&quot;,      :one_day             =&gt; &quot;1 dag&quot;,      :x_days              =&gt; &quot;%d dagen&quot;</td>
+          <td class="context-item-value">{       :less_than_x_seconds =&gt; &quot;minder dan %d seconden&quot;,       :half_a_minute       =&gt; &quot;een halve minuut&quot;,       :less_than_a_minute  =&gt; &quot;minder dan een halve minuut&quot;,       :one_minute          =&gt; &quot;1 minuut&quot;,       :x_minutes           =&gt; &quot;%d minuten&quot;,       :one_hour            =&gt; &quot;ongeveer 1 uur&quot;,       :x_hours             =&gt; &quot;ongeveer %d uur&quot;,       :one_day             =&gt; &quot;1 dag&quot;,       :x_days              =&gt; &quot;%d dagen&quot;</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">Monthnames</td>
           <td>=</td>
-          <td class="context-item-value">[nil] + %w{Januari Februari Maart April Mei Juni July Augustus September October November December}</td>
+          <td class="context-item-value">[nil] + %w{Januari Februari Maart April Mei Juni Juli Augustus September October November December}</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">AbbrMonthnames</td>
@@ -327,12 +352,17 @@
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">DateFormats</td>
           <td>=</td>
-          <td class="context-item-value">{      :default  =&gt; &quot;%Y-%m-%d&quot;,      :short    =&gt; &quot;%b %e&quot;,      :long     =&gt; &quot;%B %e, %Y&quot;</td>
+          <td class="context-item-value">{       :default  =&gt; &quot;%Y-%m-%d&quot;,       :short    =&gt; &quot;%b %e&quot;,       :long     =&gt; &quot;%B %e, %Y&quot;</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">TimeFormats</td>
           <td>=</td>
-          <td class="context-item-value">{      :default  =&gt; &quot;%a, %d %b %Y %H:%M:%S %z&quot;,      :short    =&gt; &quot;%d %b %H:%M&quot;,      :long     =&gt; &quot;%B %d, %Y %H:%M&quot;</td>
+          <td class="context-item-value">{       :default  =&gt; &quot;%a, %d %b %Y %H:%M:%S %z&quot;,       :short    =&gt; &quot;%d %b %H:%M&quot;,       :long     =&gt; &quot;%B %d, %Y %H:%M&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateSelectOrder</td>
+          <td>=</td>
+          <td class="context-item-value">{       :order    =&gt; [:day, :month, :year]</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">Texts</td>
@@ -370,6 +400,11 @@
           <td class="context-item-value">{       :default  =&gt; &quot;%A, %d %b %Y %H:%M:%S&quot;,       :short    =&gt; &quot;%d %b %H:%M&quot;,       :long     =&gt; &quot;%B %d, %Y %H:%M&quot;</td>
         </tr>
         <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateSelectOrder</td>
+          <td>=</td>
+          <td class="context-item-value">{       :order    =&gt; [:year, :month, :day]</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
           <td class="context-item-name">Texts</td>
           <td>=</td>
           <td class="context-item-value">{       :less_than_x_seconds =&gt; &quot;mindre än %d sekunder&quot;,       :half_a_minute       =&gt; &quot;en halv minut&quot;,       :less_than_a_minute  =&gt; &quot;mindre än en minut&quot;,       :one_minute          =&gt; &quot;1 minut&quot;,       :x_minutes           =&gt; &quot;%d minutter&quot;,       :one_hour            =&gt; &quot;ungefär 1 timma&quot;,       :x_hours             =&gt; &quot;ungefär %d timmar&quot;,       :one_day             =&gt; &quot;1 dygn&quot;,       :x_days              =&gt; &quot;%d dygn&quot;</td>
@@ -403,6 +438,11 @@
           <td class="context-item-name">TimeFormats</td>
           <td>=</td>
           <td class="context-item-value">{       :default  =&gt; &quot;%a, %d %b %Y %H:%M:%S %z&quot;,       :short    =&gt; &quot;%d %b %H:%M&quot;,       :long     =&gt; &quot;%B %d, %Y %H:%M&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateSelectOrder</td>
+          <td>=</td>
+          <td class="context-item-value">{       :order    =&gt; [:day, :month, :year]</td>
         </tr>
         </table>
       </div>

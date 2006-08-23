@@ -87,6 +87,10 @@
                 lib/lang_se.rb
                 </a>
         <br />
+                <a href="../files/lib/localization_simplified_rb.html">
+                lib/localization_simplified.rb
+                </a>
+        <br />
             </td>
         </tr>
 
@@ -102,17 +106,28 @@
 
     <div id="description">
       <p>
-lang_se.rb Swedish translation file. Translation from plugin swe_rails by
-Ola Bini ( <a
-href="http://ola-bini.blogspot.com">ola-bini.blogspot.com</a>/ ) and Olle
-Johnsson ( <a href="http://olleolleolle.dk">olleolleolle.dk</a> )
+<a href="LocalizationSimplified.html">LocalizationSimplified</a>
 </p>
+<pre>
+ Really simple localization for Rails
+ By Jesper Rønn-Jensen ( http://justaddwater.dk/ )
+ Plugin available at http://visitjesper.homeip.net/plugins/
+ IMPORTANT: Plugin directory likely to move to more appropriate location soon
+</pre>
 
     </div>
 
 
    </div>
 
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000010">distance_of_time_in_words</a>&nbsp;&nbsp;
+      <a href="#M000009">localize_strftime</a>&nbsp;&nbsp;
+      </div>
+    </div>
 
   </div>
 
@@ -139,42 +154,42 @@ Class <a href="LocalizationSimplified/NumberHelper.html" class="link">Localizati
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">About</td>
           <td>=</td>
-          <td class="context-item-value">{     :lang =&gt; &quot;chef&quot;,     :updated =&gt; &quot;2006-08-17&quot;</td>
+          <td class="context-item-value">{     :lang =&gt; &quot;chef&quot;,     :updated =&gt; &quot;2006-08-23&quot;</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">About</td>
           <td>=</td>
-          <td class="context-item-value">{     :lang =&gt; &quot;da&quot;,     :updated =&gt; &quot;2006-08-17&quot;</td>
+          <td class="context-item-value">{     :lang =&gt; &quot;da&quot;,     :updated =&gt; &quot;2006-08-23&quot;</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">About</td>
           <td>=</td>
-          <td class="context-item-value">{     :lang =&gt; &quot;de&quot;,     :updated =&gt; &quot;2006-08-17&quot;</td>
+          <td class="context-item-value">{     :lang =&gt; &quot;de&quot;,     :updated =&gt; &quot;2006-08-23&quot;</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">About</td>
           <td>=</td>
-          <td class="context-item-value">{     :lang =&gt; &quot;en&quot;,     :updated =&gt; &quot;2006-08-17&quot;</td>
+          <td class="context-item-value">{     :lang =&gt; &quot;en&quot;,     :updated =&gt; &quot;2006-08-23&quot;</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">About</td>
           <td>=</td>
-          <td class="context-item-value">{     :lang =&gt; &quot;es&quot;,     :updated =&gt; &quot;2006-08-17&quot;</td>
+          <td class="context-item-value">{     :lang =&gt; &quot;es&quot;,     :updated =&gt; &quot;2006-08-23&quot;</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">About</td>
           <td>=</td>
-          <td class="context-item-value">{    :lang =&gt; &quot;nl&quot;,    :updated =&gt; &quot;2006-08-20&quot;</td>
+          <td class="context-item-value">{     :lang =&gt; &quot;nl&quot;,     :updated =&gt; &quot;2006-08-23&quot;</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">About</td>
           <td>=</td>
-          <td class="context-item-value">{     :lang =&gt; &quot;pirate&quot;,     :updated =&gt; &quot;2006-08-18&quot;</td>
+          <td class="context-item-value">{     :lang =&gt; &quot;pirate&quot;,     :updated =&gt; &quot;2006-08-23&quot;</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">About</td>
           <td>=</td>
-          <td class="context-item-value">{     :lang =&gt; &quot;se&quot;,     :updated =&gt; &quot;2006-08-17&quot;</td>
+          <td class="context-item-value">{     :lang =&gt; &quot;se&quot;,     :updated =&gt; &quot;2006-08-23&quot;</td>
         </tr>
         </table>
       </div>
@@ -186,6 +201,94 @@ Class <a href="LocalizationSimplified/NumberHelper.html" class="link">Localizati
 
 
     <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000010" class="method-detail">
+        <a name="M000010"></a>
+
+        <div class="method-heading">
+          <a href="#M000010" class="method-signature">
+          <span class="method-name">distance_of_time_in_words</span><span class="method-args">(from_time, to_time = 0, include_seconds = false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Modify <a href="LocalizationSimplified/DateHelper.html">DateHelper</a> <a
+href="LocalizationSimplified.html#M000010">distance_of_time_in_words</a>
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000010-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000010-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/localization_simplified.rb, line 20</span>
+20:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">distance_of_time_in_words</span>(<span class="ruby-identifier">from_time</span>, <span class="ruby-identifier">to_time</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">include_seconds</span> = <span class="ruby-keyword kw">false</span>)
+21:     <span class="ruby-identifier">from_time</span> = <span class="ruby-identifier">from_time</span>.<span class="ruby-identifier">to_time</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">from_time</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:to_time</span>)
+22:     <span class="ruby-identifier">to_time</span> = <span class="ruby-identifier">to_time</span>.<span class="ruby-identifier">to_time</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">to_time</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:to_time</span>)
+23:     <span class="ruby-identifier">distance_in_minutes</span> = (((<span class="ruby-identifier">to_time</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">from_time</span>).<span class="ruby-identifier">abs</span>)<span class="ruby-operator">/</span><span class="ruby-value">60</span>).<span class="ruby-identifier">round</span>
+24:     <span class="ruby-identifier">distance_in_seconds</span> = ((<span class="ruby-identifier">to_time</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">from_time</span>).<span class="ruby-identifier">abs</span>).<span class="ruby-identifier">round</span>
+25:     
+26:     <span class="ruby-comment cmt">#First, I invent a variable (makes it easier for future i10n)</span>
+27:     <span class="ruby-identifier">messages</span> = <span class="ruby-constant">LocalizationSimplified</span><span class="ruby-operator">::</span><span class="ruby-constant">DateHelper</span><span class="ruby-operator">::</span><span class="ruby-constant">Texts</span> <span class="ruby-comment cmt">#localized</span>
+28:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">distance_in_minutes</span>
+29:       <span class="ruby-keyword kw">when</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>
+30:         <span class="ruby-keyword kw">return</span> (<span class="ruby-identifier">distance_in_minutes</span><span class="ruby-operator">==</span><span class="ruby-value">0</span>) <span class="ruby-operator">?</span> <span class="ruby-value str">'less than a minute'</span> <span class="ruby-operator">:</span> <span class="ruby-value str">'1 minute'</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">include_seconds</span>
+31:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">distance_in_seconds</span>
+32:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">5</span>   <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">format</span>( <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:less_than_x_seconds</span>], <span class="ruby-value">5</span> )
+33:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">6</span><span class="ruby-operator">..</span><span class="ruby-value">10</span>  <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">format</span>( <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:less_than_x_seconds</span>], <span class="ruby-value">10</span> )
+34:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">11</span><span class="ruby-operator">..</span><span class="ruby-value">20</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">format</span>( <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:less_than_x_seconds</span>], <span class="ruby-value">20</span> )
+35:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">21</span><span class="ruby-operator">..</span><span class="ruby-value">40</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:half_a_minute</span>]
+36:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">41</span><span class="ruby-operator">..</span><span class="ruby-value">59</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:less_than_a_minute</span>]
+37:           <span class="ruby-keyword kw">else</span>             <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:one_minute</span>]
+38:         <span class="ruby-keyword kw">end</span>
+39:                             
+40:       <span class="ruby-keyword kw">when</span> <span class="ruby-value">2</span><span class="ruby-operator">..</span><span class="ruby-value">45</span>      <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">format</span>(<span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:x_minutes</span>], <span class="ruby-identifier">distance_in_minutes</span>)
+41:       <span class="ruby-keyword kw">when</span> <span class="ruby-value">46</span><span class="ruby-operator">..</span><span class="ruby-value">90</span>     <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:one_hour</span>]
+42:       <span class="ruby-keyword kw">when</span> <span class="ruby-value">90</span><span class="ruby-operator">..</span><span class="ruby-value">1440</span>   <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">format</span>( <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:x_hours</span>], (<span class="ruby-identifier">distance_in_minutes</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-value">60.0</span>).<span class="ruby-identifier">round</span> )
+43:       <span class="ruby-keyword kw">when</span> <span class="ruby-value">1441</span><span class="ruby-operator">..</span><span class="ruby-value">2880</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:one_day</span>]
+44:       <span class="ruby-keyword kw">else</span>                  <span class="ruby-identifier">format</span>( <span class="ruby-identifier">messages</span>[<span class="ruby-identifier">:x_days</span>], (<span class="ruby-identifier">distance_in_minutes</span> <span class="ruby-operator">/</span> <span class="ruby-value">1440</span>).<span class="ruby-identifier">round</span> )
+45:     <span class="ruby-keyword kw">end</span>
+46:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000009" class="method-detail">
+        <a name="M000009"></a>
+
+        <div class="method-heading">
+          <a href="#M000009" class="method-signature">
+          <span class="method-name">localize_strftime</span><span class="method-args">(date='%d.%m.%Y', time='')</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+substitute all daynames and monthnames with localized names from RUtils
+plugin
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000009-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000009-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/localization_simplified.rb, line 10</span>
+10:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">localize_strftime</span>(<span class="ruby-identifier">date</span>=<span class="ruby-value str">'%d.%m.%Y'</span>, <span class="ruby-identifier">time</span>=<span class="ruby-value str">''</span>)
+11:     <span class="ruby-identifier">date</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/%%/</span>, <span class="ruby-ivar">@@ignore</span>)
+12:     <span class="ruby-identifier">date</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/%a/</span>, <span class="ruby-constant">LocalizationSimplified</span><span class="ruby-operator">::</span><span class="ruby-constant">DateHelper</span><span class="ruby-operator">::</span><span class="ruby-constant">AbbrDaynames</span>[<span class="ruby-identifier">time</span>.<span class="ruby-identifier">wday</span>])
+13:     <span class="ruby-identifier">date</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/%A/</span>, <span class="ruby-constant">LocalizationSimplified</span><span class="ruby-operator">::</span><span class="ruby-constant">DateHelper</span><span class="ruby-operator">::</span><span class="ruby-constant">Daynames</span>[<span class="ruby-identifier">time</span>.<span class="ruby-identifier">wday</span>])
+14:     <span class="ruby-identifier">date</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/%b/</span>, <span class="ruby-constant">LocalizationSimplified</span><span class="ruby-operator">::</span><span class="ruby-constant">DateHelper</span><span class="ruby-operator">::</span><span class="ruby-constant">AbbrMonthnames</span>[<span class="ruby-identifier">time</span>.<span class="ruby-identifier">mon</span>])
+15:     <span class="ruby-identifier">date</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/%B/</span>, <span class="ruby-constant">LocalizationSimplified</span><span class="ruby-operator">::</span><span class="ruby-constant">DateHelper</span><span class="ruby-operator">::</span><span class="ruby-constant">Monthnames</span>[<span class="ruby-identifier">time</span>.<span class="ruby-identifier">mon</span>])
+16:     <span class="ruby-identifier">date</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-ivar">@@ignore</span>, <span class="ruby-value str">'%%'</span>)
+17:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
 
 
   </div>

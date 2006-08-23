@@ -56,7 +56,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Sun Aug 20 22:02:01 Romance Daylight Time 2006</td>
+      <td>Wed Aug 23 13:46:02 Romance Daylight Time 2006</td>
     </tr>
     </table>
   </div>
@@ -70,7 +70,7 @@
 
     <div id="description">
       <p>
-﻿=Localization Simplified (<a
+﻿==Localization Simplified (<a
 href="../classes/LocalizationSimplified.html">LocalizationSimplified</a>)
 </p>
 <p>
@@ -110,11 +110,12 @@ This plugin modifies the following most used helpers for Rails
 <li>Sets UTF-8 connection to database
 
 </li>
-<li>Localized monthnames on date_select etc. (but not changing the order of
-Y-M-D)
+<li>Localized monthnames on date_select etc. (changing the order of Y-M-D,
+where Rails allows)
 
 </li>
-<li>Localized ActiveRecord errors (and error headings)
+<li>Localized <a href="../classes/ActiveRecord.html">ActiveRecord</a> errors
+(and error headings)
 
 </li>
 <li>Localized distance_of_time_in_words
@@ -145,14 +146,20 @@ localization functions in your view files
 like GLoc or Globalize
 
 </li>
-<li>No support for re-ordering date_select fields or currency indicators. This
-can be done fairly easy and is already implemented in other frameworks.
+<li>No support for re-ordering datetime_select fields or currency indicators.
 
+<pre>
+      But date_select IS re-ordered. Currently, Rails lacks support of :order on these,
+</pre>
+<p>
+but it can be done fairly easy and is already implemented in other
+frameworks.
+</p>
 </li>
 </ul>
 <p>
-The reason why I have not reordered the date_select fields or currency is
-that it will introduce an unnecessary dependency here (because functions
+The reason why I have not reordered the datetime_select fields or currency
+is that it will introduce an unnecessary dependency here (because functions
 have to be recoded).
 </p>
 <h3>Supported languages</h3>
@@ -230,9 +237,6 @@ bring you in trouble.
 are welcome)
 
 </li>
-<li>Test that this works with the Rails version it&#8217;s installed next to
-
-</li>
 <li>Add test cases to verify it works properly
 
 </li>
@@ -240,13 +244,27 @@ are welcome)
 of the overridden functions from this plugin
 
 </li>
-<li>Modify to_boolean_select_tag with localized true/false?? (normally,
-i&#8217;d prefer to use a checkbox for this and NOT a select tag)
+<li>Modify to_boolean_select_tag with localized true/false?? (normally, I would
+prefer to use a checkbox for this and NOT a select tag)
 
 </li>
 </ul>
 <h3>DONE</h3>
 <ul>
+<li>Localized time &quot;Wed Aug 23 12:38:22 Romance Daylight <a
+href="../classes/Time.html">Time</a> 2006&quot; =&gt;
+
+<pre>
+               &quot;onsdag d. 23 august 2006 12:38:22&quot; (Danish)
+</pre>
+</li>
+<li>Reordering of date_select fields (2006-08-23)
+
+</li>
+<li>Test that plugin works with the Rails version it is installed next to
+(2006-08-20)
+
+</li>
 <li>Added Dutch translation lang_nl.rb, thanks to Jeroen Houben (2006-08-20)
 
 </li>
@@ -265,7 +283,7 @@ locale specific strings (2006-08-18)
 
 </li>
 <li>Localized version of <a
-href="../classes/Array.html#M000001">Array.to_sentence</a> (2006-08-09)
+href="../classes/Array.html#M000002">Array.to_sentence</a> (2006-08-09)
 
 </li>
 <li>Added test scaffold (2006-08-09)
