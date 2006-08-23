@@ -83,7 +83,7 @@ class LocalizationSimplifiedTest < Test::Unit::TestCase
 		# assert_respond_to  arr, orig_to_sentence
 	end
 	
-	def test_date_helpers
+	def test_time_ago_in_words
 		assert ActionView::Helpers::NumberHelper
 		a = ActionView::Base.new
 		messages =LocalizationSimplified::DateHelper::Texts
@@ -102,6 +102,14 @@ class LocalizationSimplifiedTest < Test::Unit::TestCase
 		assert messages[:one_day]                                                    , a.time_ago_in_words(1.day.ago)
 #		assert format( messages[:x_days], (distance_in_minutes / 1440).round )       , a.time_ago_in_words(4.days.ago)
 	end
-
 	
+	def test_time_is_localized
+		t = Time.parse('2006-08-23 11:55:44')
+		assert_equal  "Wed Aug 23 11:55:44 Romance Daylight Time 2006", t.to_s, "NOTE: This test should fail if locale has different daynames, monthnames, timezone"
+		
+	end
+	
+	def test_date_is_localized
+		
+	end
 end

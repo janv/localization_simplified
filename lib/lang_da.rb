@@ -6,7 +6,7 @@
 module LocalizationSimplified
   About = {
     :lang => "da",
-    :updated => "2006-08-17"
+    :updated => "2006-08-23"
   }
 
   class ActiveRecord
@@ -46,7 +46,7 @@ module LocalizationSimplified
     AbbrMonthnames = [nil] + %w{jan feb mar apr maj jun jul aug sep okt nov dec}
     Daynames       = %w{søndag mandag tirsdag onsdag torsdag fredag lørdag}
     AbbrDaynames   = %w{søn man tir ons tors fre lør}
-    
+
     DateFormats = {
       :default  => "%Y-%m-%d",
       :short    => "%e %b",
@@ -54,9 +54,12 @@ module LocalizationSimplified
     }
 
     TimeFormats = {
-      :default  => "%d %b %Y %H:%M",
-      :short    => "%d %b %H:%M",
-      :long     => "%d %B %Y %H:%M"
+      :default  => "%A d. %d %B %Y %H:%M", #no timezone
+      :short    => "%d. %b %H:%M",
+      :long     => "%d. %B %Y %H:%M"
+    }
+    DateSelectOrder = {
+      :order    => [:day, :month, :year] #default Rails is US ordered: :order => [:year, :month, :day]
     }
   end
 
