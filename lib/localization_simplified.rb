@@ -196,8 +196,8 @@ class ActionController::Base
   
   def configure_charsets(charset='utf-8')
     $KCODE = 'u'
-    #Response header below not necessary in new versions of Rails (thanks Jeroen Houben)
-    #@response.headers["Content-Type"] = "text/html; charset=utf-8"
+    # Response header necessary with some lang-files (like lang_pirate.rb for some reason)
+    @response.headers["Content-Type"] = "text/html; charset=utf-8"
 
     # Set connection charset. MySQL 4.0 doesn't support this so it
     # will throw an error, MySQL 4.1 needs this
