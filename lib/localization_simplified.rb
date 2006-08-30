@@ -27,7 +27,7 @@ module LocalizationSimplified
     messages = LocalizationSimplified::DateHelper::Texts #localized
     case distance_in_minutes
       when 0..1
-        return (distance_in_minutes==0) ? 'less than a minute' : '1 minute' unless include_seconds
+        return (distance_in_minutes==0) ? messages[:less_than_a_minute] :  messages[:one_minute] unless include_seconds
         case distance_in_seconds
           when 0..5   then format( messages[:less_than_x_seconds], 5 )
           when 6..10  then format( messages[:less_than_x_seconds], 10 )
@@ -59,7 +59,7 @@ end
 module ActionView
   module Helpers
 
-    #Modifiy ActiveRecord to use error message headers (text from lang-file)
+    #Modify ActiveRecord to use error message headers (text from lang-file)
     module ActiveRecordHelper
       alias_method :old_error_messages_for, :error_messages_for
       def error_messages_for(object_name, options = {})
