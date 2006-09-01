@@ -1,8 +1,8 @@
-  #LocalizationSimplified
-  # Really simple localization for Rails
-  # By Jesper Rønn-Jensen ( http://justaddwater.dk/ )
-  # Plugin available at http://visitjesper.homeip.net/plugins/ 
-  # IMPORTANT: Plugin directory likely to move to more appropriate location soon
+# LocalizationSimplified
+# Really simple localization for Rails
+# By Jesper Rønn-Jensen ( http://justaddwater.dk/ )
+# Plugin available at http://rubyforge.org/projects/l10n-simplified/
+# 
 module LocalizationSimplified
   @@ignore = "\xFF\xFF\xFF\xFF" # %% == Literal "%" character 
   # substitute all daynames and monthnames with localized names
