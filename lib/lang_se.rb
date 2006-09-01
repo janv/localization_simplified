@@ -1,6 +1,6 @@
 # lang_se.rb
 # Swedish translation file. 
-# Translation from plugin swe_rails by Ola Bini ( http://ola-bini.blogspot.com/ ) and Olle Johnsson ( http://olleolleolle.dk )
+# Translation from plugin swe_rails by Ola Bini ( http://ola-bini.blogspot.com/ ) and Olle Jonsson ( http://olleolleolle.dk )
 
 
 module LocalizationSimplified
