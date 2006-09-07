@@ -34,7 +34,7 @@ module LocalizationSimplified
       :not_a_number        => "is nut a noomber",
       #Jespers additions:
       :error_translation   => "irrur",
-      :error_header        => "%s pruheebited thees %s frum beeeng sefed",
+      :error_header        => "%s pruheebited thees %s frum beeeng sefed. Børk! Børk! Børk!",
       :error_subheader     => "Zeere-a vere-a prublems veet zee fullooeeng feeelds:"
     }
   end
@@ -45,12 +45,16 @@ module LocalizationSimplified
       :less_than_x_seconds => "less thun %d secunds",
       :half_a_minute       => "helff a meenoote-a",
       :less_than_a_minute  => "less thun a meenoote-a",
-      :one_minute          => "1 meenoote-a",
+      :one_minute          => "one-a meenoote-a",
       :x_minutes           => "%d meenootes",
-      :one_hour            => "ebuoot 1 huoor",
+      :one_hour            => "ebuoot one-a huoor",
       :x_hours             => "ebuoot %d huoors",
-      :one_day             => "1 dey",
-      :x_days              => "%d deys"
+      :one_day             => "one-a dey",
+      :x_days              => "%d deys",
+      :one_month           => "one-a munt",
+      :x_months            => "%d munts",
+      :one_year            => "one-a yeer",
+      :x_years             => "%d yeers"
     }
 
     # Rails uses Month names in Date and time select boxes 

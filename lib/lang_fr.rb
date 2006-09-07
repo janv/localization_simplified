@@ -6,7 +6,7 @@
 module LocalizationSimplified
   About = {
     :lang => "fr",
-    :updated => "2006-09-03"
+    :updated => "2006-09-07"
   }
 
   class ActiveRecord
@@ -50,7 +50,11 @@ module LocalizationSimplified
       :one_hour            => "à peut près 1 heure",
       :x_hours             => "à peu près %d heures",
       :one_day             => "1 jour",
-      :x_days              => "%d jours"
+      :x_days              => "%d jours",
+      :one_month           => "1 mois",
+      :x_months            => "%d mois",
+      :one_year            => "1 an",
+      :x_years             => "%d ans"
     }
 
     # Rails uses Month names in Date and time select boxes 

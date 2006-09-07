@@ -1,6 +1,6 @@
 # lang_cf.rb
 # french canadian translation file
-# Translation by Daniel Lepage ( http://www.solulabs.com/ ), inspired by example on
+# Translation by Daniel Lepage ( http://www.solulabs.com/ )
 
 module LocalizationSimplified
   About = {
@@ -49,7 +49,11 @@ module LocalizationSimplified
       :one_hour            => "environ 1 heure",
       :x_hours             => "environ %d heures",
       :one_day             => "1 jour",
-      :x_days              => "%d jours"
+      :x_days              => "%d jours",
+      :one_month           => "1 mois",
+      :x_months            => "%d mois",
+      :one_year            => "1 an",
+      :x_years             => "%d ans"
     }
 
     # Rails uses Month names in Date and time select boxes 

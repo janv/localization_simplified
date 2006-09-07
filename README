@@ -91,6 +91,10 @@ It's not required for working, I guess, but other encodings could bring you in t
 * Verify that the lang-files supplied are relevant
 
 === DONE
+* Added augmented and corrected distance_of_time_in_words from Rails trunk (2006-09-07)
+* Added date_select and datetime_select on the helper page (2006-09-07)
+* Updated dutch date-time formats, thanks Jeroen Houben (2006-09-07)
+* --- release 0.6.1 ---
 * Added comments in all lang-files, thanks Jarkko Laine for the idea (2006-09-07)
 * Bugfix: Replaced hardcoded string in distance_of_time_in_words when :include_seconds was false (2006-08-30)
 * Added Canadian French translation (thanks Daniel) (2006-08-25)
@@ -98,6 +102,7 @@ It's not required for working, I guess, but other encodings could bring you in t
 * Added French translation (thanks Fred Cavazza) (2006-08-25)
 * Added Finnish translation (thanks Jarkko Laine) (2006-08-25)
 * Bugfix re-added HTTP header for UTF-8. Necessary for some lang-files (2004-08-24)
+* --- release 0.6 ---
 * Renamed test files to make rake test command work (2006-08-23)
 * Localized time "Wed Aug 23 12:38:22 Romance Daylight Time 2006" =>
                  "onsdag d. 23 august 2006 12:38:22" (Danish)

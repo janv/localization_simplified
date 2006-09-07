@@ -50,7 +50,11 @@ module LocalizationSimplified
       :one_hour            => "ungefär 1 timma",
       :x_hours             => "ungefär %d timmar",
       :one_day             => "1 dygn",
-      :x_days              => "%d dygn"
+      :x_days              => "%d dygn",
+      :one_month           => "1 month",
+      :x_months            => "%d months",
+      :one_year            => "1 year",
+      :x_years             => "%d years"
     }
     # Rails uses Month names in Date and time select boxes 
     # (+date_select+ and +datetime_select+ )

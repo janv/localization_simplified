@@ -29,19 +29,23 @@ module LocalizationSimplified
       when 0..1
         return (distance_in_minutes==0) ? messages[:less_than_a_minute] :  messages[:one_minute] unless include_seconds
         case distance_in_seconds
-          when 0..5   then format( messages[:less_than_x_seconds], 5 )
-          when 6..10  then format( messages[:less_than_x_seconds], 10 )
-          when 11..20 then format( messages[:less_than_x_seconds], 20 )
-          when 21..40 then messages[:half_a_minute]
-          when 41..59 then messages[:less_than_a_minute]
-          else             messages[:one_minute]
-        end
-                            
-      when 2..45      then format(messages[:x_minutes], distance_in_minutes)
-      when 46..90     then messages[:one_hour]
-      when 90..1440   then format( messages[:x_hours], (distance_in_minutes.to_f / 60.0).round )
-      when 1441..2880 then messages[:one_day]
-      else                  format( messages[:x_days], (distance_in_minutes / 1440).round )
+          when 0..5        then format( messages[:less_than_x_seconds], 5 )
+          when 6..10       then format( messages[:less_than_x_seconds], 10 )
+          when 11..20      then format( messages[:less_than_x_seconds], 20 )
+          when 21..40      then messages[:half_a_minute]
+          when 41..59      then messages[:less_than_a_minute]
+          else                  messages[:one_minute]
+        end                
+                                 
+      when 2..44           then format(messages[:x_minutes], distance_in_minutes)
+      when 45..89          then messages[:one_hour]
+      when 90..1439        then format( messages[:x_hours], (distance_in_minutes.to_f / 60.0).round )
+      when 1440..2879      then messages[:one_day]
+      when 2880..43199     then format( messages[:x_days], (distance_in_minutes / 1440).round )
+      when 43200..86399    then messages[:one_month]
+      when 86400..525959   then format( messages[:x_months], (distance_in_minutes / 43200).round )
+      when 525960..1051919 then messages[:one_year]
+      else                 then format( messages[:x_years], (distance_in_minutes / 525960).round )
     end
   end 
 

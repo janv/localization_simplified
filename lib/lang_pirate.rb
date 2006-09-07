@@ -34,7 +34,7 @@ module LocalizationSimplified
       :not_a_number        => "be not a number, matey",
       #Jespers additions:
       :error_translation   => "errrorrr",
-      :error_header        => "Ohoy! %s prohibited ye %s from bein' saved",
+      :error_header        => "Ahoy me hearty! %s prohibited ye %s from bein' saved",
       :error_subheader     => "Turn the steering wheeel and corrrect these fields, arrrrh."
     }
   end
@@ -50,7 +50,11 @@ module LocalizationSimplified
       :one_hour            => "about one hourrr and a bottle of rum",
       :x_hours             => "about %d hourrrs and a bottle of rum",
       :one_day             => "1 day and a dead mans chest arrr",
-      :x_days              => "%d days and a ship full of hornpipes"
+      :x_days              => "%d days and a ship full of hornpipes",
+      :one_month           => "1 full moon",
+      :x_months            => "%d full moons",
+      :one_year            => "1 yearrrr",
+      :x_years             => "%d yearrrrrs"
     }
 
     # Rails uses Month names in Date and time select boxes 
