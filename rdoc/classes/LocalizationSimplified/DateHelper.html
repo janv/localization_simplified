@@ -55,6 +55,10 @@
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
+                <a href="../../files/lib/lang_cf_rb.html">
+                lib/lang_cf.rb
+                </a>
+        <br />
                 <a href="../../files/lib/lang_chef_rb.html">
                 lib/lang_chef.rb
                 </a>
@@ -75,6 +79,18 @@
                 lib/lang_es.rb
                 </a>
         <br />
+                <a href="../../files/lib/lang_fi_rb.html">
+                lib/lang_fi.rb
+                </a>
+        <br />
+                <a href="../../files/lib/lang_fr_rb.html">
+                lib/lang_fr.rb
+                </a>
+        <br />
+                <a href="../../files/lib/lang_fr__rb.html">
+                lib/lang_fr_.rb
+                </a>
+        <br />
                 <a href="../../files/lib/lang_nl_rb.html">
                 lib/lang_nl.rb
                 </a>
@@ -85,6 +101,10 @@
         <br />
                 <a href="../../files/lib/lang_se_rb.html">
                 lib/lang_se.rb
+                </a>
+        <br />
+                <a href="../../files/lib/lang_template_rb.html">
+                lib/lang_template.rb
                 </a>
         <br />
             </td>
@@ -106,6 +126,12 @@
 
   <div id="contextContent">
 
+    <div id="description">
+      <p>
+Texts to override +distance_of_time_in_words()+
+</p>
+
+    </div>
 
 
    </div>
@@ -127,12 +153,82 @@
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">Texts</td>
           <td>=</td>
+          <td class="context-item-value">{       :less_than_x_seconds =&gt; &quot;moins de %d secondes&quot;,       :half_a_minute       =&gt; &quot;30 secondes&quot;,       :less_than_a_minute  =&gt; &quot;moins d'une minute&quot;,       :one_minute          =&gt; &quot;1 minute&quot;,       :x_minutes           =&gt; &quot;%d minutes&quot;,       :one_hour            =&gt; &quot;environ 1 heure&quot;,       :x_hours             =&gt; &quot;environ %d heures&quot;,       :one_day             =&gt; &quot;1 jour&quot;,       :x_days              =&gt; &quot;%d jours&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Monthnames</td>
+          <td>=</td>
+          <td class="context-item-value">[nil] + %w{Janvier Février Mars Avril Mai Juin Juillet Août Septembre Octobre Novembre Décembre}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Rails uses Month names in <a href="../Date.html">Date</a> and time select
+boxes (<tt>date_select</tt> and <tt>datetime_select</tt> ) Currently (as of
+version 1.1.6), Rails doesn&#8217;t use daynames
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">AbbrMonthnames</td>
+          <td>=</td>
+          <td class="context-item-value">[nil] + %w{Jan Fev Mar Avr Mai Jun Jui Aou Sep Oct Nov Dec}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Daynames</td>
+          <td>=</td>
+          <td class="context-item-value">%w{Dimanche Lundi Mardi Mercredi Jeudi Vendredi Samedi}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">AbbrDaynames</td>
+          <td>=</td>
+          <td class="context-item-value">%w{Dim Lun Mar Mer Jeu Ven Sam}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateFormats</td>
+          <td>=</td>
+          <td class="context-item-value">{       :default  =&gt; &quot;%Y-%m-%d&quot;,       :short    =&gt; &quot;%b %e&quot;,       :long     =&gt; &quot;%B %e, %Y&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="../Date.html">Date</a> and time format syntax explained in <a
+href="http://www.rubycentral.com/ref/ref_c_time.html#strftime">www.rubycentral.com/ref/ref_c_time.html#strftime</a>
+These are sent to strftime that Ruby&#8217;s date and time handlers use
+internally Same options as php (that has a better list: <a
+href="http://www.php.net/strftime">www.php.net/strftime</a> )
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TimeFormats</td>
+          <td>=</td>
+          <td class="context-item-value">{       :default  =&gt; &quot;%a, %d %b %Y %H:%M:%S %z&quot;,       :short    =&gt; &quot;%d %b %H:%M&quot;,       :long     =&gt; &quot;%B %d, %Y %H:%M&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateSelectOrder</td>
+          <td>=</td>
+          <td class="context-item-value">{       :order    =&gt; [:year, :month, :day]</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Set the order of <tt>date_select</tt> and <tt>datetime_select</tt> boxes
+Note that at present, the current Rails version only supports ordering of
+date_select boxes
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Texts</td>
+          <td>=</td>
           <td class="context-item-value">{       :less_than_x_seconds =&gt; &quot;less thun %d secunds&quot;,       :half_a_minute       =&gt; &quot;helff a meenoote-a&quot;,       :less_than_a_minute  =&gt; &quot;less thun a meenoote-a&quot;,       :one_minute          =&gt; &quot;1 meenoote-a&quot;,       :x_minutes           =&gt; &quot;%d meenootes&quot;,       :one_hour            =&gt; &quot;ebuoot 1 huoor&quot;,       :x_hours             =&gt; &quot;ebuoot %d huoors&quot;,       :one_day             =&gt; &quot;1 dey&quot;,       :x_days              =&gt; &quot;%d deys&quot;</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">Monthnames</td>
           <td>=</td>
           <td class="context-item-value">[nil] + %w{Junooery Febrooery Merch Epreel Mey Joone-a Jooly Oogoost Seeptembooor Ooctuber Nufember Deezember}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Rails uses Month names in <a href="../Date.html">Date</a> and time select
+boxes (<tt>date_select</tt> and <tt>datetime_select</tt> ) Currently (as of
+version 1.1.6), Rails doesn&#8217;t use daynames
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">AbbrMonthnames</td>
@@ -153,6 +249,15 @@
           <td class="context-item-name">DateFormats</td>
           <td>=</td>
           <td class="context-item-value">{       :default  =&gt; &quot;%Y-%m-%d&quot;,       :short    =&gt; &quot;%b %e&quot;,       :long     =&gt; &quot;%B %e, %Y&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="../Date.html">Date</a> and time format syntax explained in <a
+href="http://www.rubycentral.com/ref/ref_c_time.html#strftime">www.rubycentral.com/ref/ref_c_time.html#strftime</a>
+These are sent to strftime that Ruby&#8217;s date and time handlers use
+internally Same options as php (that has a better list: <a
+href="http://www.php.net/strftime">www.php.net/strftime</a> )
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">TimeFormats</td>
@@ -163,6 +268,13 @@
           <td class="context-item-name">DateSelectOrder</td>
           <td>=</td>
           <td class="context-item-value">{       :order    =&gt; [:year, :month, :day]</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Set the order of <tt>date_select</tt> and <tt>datetime_select</tt> boxes
+Note that at present, the current Rails version only supports ordering of
+date_select boxes
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">Texts</td>
@@ -173,6 +285,13 @@
           <td class="context-item-name">Monthnames</td>
           <td>=</td>
           <td class="context-item-value">[nil] + %w{januar februar marts april maj juni juli august september oktober november december}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Rails uses Month names in <a href="../Date.html">Date</a> and time select
+boxes (<tt>date_select</tt> and <tt>datetime_select</tt> ) Currently (as of
+version 1.1.6), Rails doesn&#8217;t use daynames
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">AbbrMonthnames</td>
@@ -193,6 +312,15 @@
           <td class="context-item-name">DateFormats</td>
           <td>=</td>
           <td class="context-item-value">{       :default  =&gt; &quot;%Y-%m-%d&quot;,       :short    =&gt; &quot;%e %b&quot;,       :long     =&gt; &quot;%e %B, %Y&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="../Date.html">Date</a> and time format syntax explained in <a
+href="http://www.rubycentral.com/ref/ref_c_time.html#strftime">www.rubycentral.com/ref/ref_c_time.html#strftime</a>
+These are sent to strftime that Ruby&#8217;s date and time handlers use
+internally Same options as php (that has a better list: <a
+href="http://www.php.net/strftime">www.php.net/strftime</a> )
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">TimeFormats</td>
@@ -203,6 +331,13 @@
           <td class="context-item-name">DateSelectOrder</td>
           <td>=</td>
           <td class="context-item-value">{       :order    =&gt; [:day, :month, :year]</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Set the order of <tt>date_select</tt> and <tt>datetime_select</tt> boxes
+Note that at present, the current Rails version only supports ordering of
+date_select boxes
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">Texts</td>
@@ -213,6 +348,13 @@
           <td class="context-item-name">Monthnames</td>
           <td>=</td>
           <td class="context-item-value">[nil] + %w{Januar Februar Märtz April Mai Juni Juli August September Oktober November Dezember}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Rails uses Month names in <a href="../Date.html">Date</a> and time select
+boxes (<tt>date_select</tt> and <tt>datetime_select</tt> ) Currently (as of
+version 1.1.6), Rails doesn&#8217;t use daynames
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">AbbrMonthnames</td>
@@ -233,6 +375,15 @@
           <td class="context-item-name">DateFormats</td>
           <td>=</td>
           <td class="context-item-value">{       :default  =&gt; &quot;%Y-%m-%d&quot;,       :short    =&gt; &quot;%b %e&quot;,       :long     =&gt; &quot;%B %e, %Y&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="../Date.html">Date</a> and time format syntax explained in <a
+href="http://www.rubycentral.com/ref/ref_c_time.html#strftime">www.rubycentral.com/ref/ref_c_time.html#strftime</a>
+These are sent to strftime that Ruby&#8217;s date and time handlers use
+internally Same options as php (that has a better list: <a
+href="http://www.php.net/strftime">www.php.net/strftime</a> )
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">TimeFormats</td>
@@ -243,6 +394,13 @@
           <td class="context-item-name">DateSelectOrder</td>
           <td>=</td>
           <td class="context-item-value">{       :order    =&gt; [:day, :month, :year]</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Set the order of <tt>date_select</tt> and <tt>datetime_select</tt> boxes
+Note that at present, the current Rails version only supports ordering of
+date_select boxes
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">Texts</td>
@@ -253,6 +411,13 @@
           <td class="context-item-name">Monthnames</td>
           <td>=</td>
           <td class="context-item-value">[nil] + %w{January February March April May June July August September October November December}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Rails uses Month names in <a href="../Date.html">Date</a> and time select
+boxes (<tt>date_select</tt> and <tt>datetime_select</tt> ) Currently (as of
+version 1.1.6), Rails doesn&#8217;t use daynames
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">AbbrMonthnames</td>
@@ -273,6 +438,15 @@
           <td class="context-item-name">DateFormats</td>
           <td>=</td>
           <td class="context-item-value">{       :default  =&gt; &quot;%Y-%m-%d&quot;,       :short    =&gt; &quot;%b %e&quot;,       :long     =&gt; &quot;%B %e, %Y&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="../Date.html">Date</a> and time format syntax explained in <a
+href="http://www.rubycentral.com/ref/ref_c_time.html#strftime">www.rubycentral.com/ref/ref_c_time.html#strftime</a>
+These are sent to strftime that Ruby&#8217;s date and time handlers use
+internally Same options as php (that has a better list: <a
+href="http://www.php.net/strftime">www.php.net/strftime</a> )
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">TimeFormats</td>
@@ -283,6 +457,13 @@
           <td class="context-item-name">DateSelectOrder</td>
           <td>=</td>
           <td class="context-item-value">{       :order    =&gt; [:year, :month, :day]</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Set the order of <tt>date_select</tt> and <tt>datetime_select</tt> boxes
+Note that at present, the current Rails version only supports ordering of
+date_select boxes
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">Texts</td>
@@ -293,6 +474,13 @@
           <td class="context-item-name">Monthnames</td>
           <td>=</td>
           <td class="context-item-value">[nil] + %w{enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Rails uses Month names in <a href="../Date.html">Date</a> and time select
+boxes (<tt>date_select</tt> and <tt>datetime_select</tt> ) Currently (as of
+version 1.1.6), Rails doesn&#8217;t use daynames
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">AbbrMonthnames</td>
@@ -313,6 +501,15 @@
           <td class="context-item-name">DateFormats</td>
           <td>=</td>
           <td class="context-item-value">{       :default  =&gt; &quot;%Y-%m-%d&quot;,       :short    =&gt; &quot;%b %e&quot;,       :long     =&gt; &quot;%B %e, %Y&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="../Date.html">Date</a> and time format syntax explained in <a
+href="http://www.rubycentral.com/ref/ref_c_time.html#strftime">www.rubycentral.com/ref/ref_c_time.html#strftime</a>
+These are sent to strftime that Ruby&#8217;s date and time handlers use
+internally Same options as php (that has a better list: <a
+href="http://www.php.net/strftime">www.php.net/strftime</a> )
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">TimeFormats</td>
@@ -323,6 +520,179 @@
           <td class="context-item-name">DateSelectOrder</td>
           <td>=</td>
           <td class="context-item-value">{       :order    =&gt; [:day, :month, :year]</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Set the order of <tt>date_select</tt> and <tt>datetime_select</tt> boxes
+Note that at present, the current Rails version only supports ordering of
+date_select boxes
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Texts</td>
+          <td>=</td>
+          <td class="context-item-value">{       :less_than_x_seconds =&gt; &quot;alle %d sekuntia&quot;,       :half_a_minute       =&gt; &quot;puoli minuuttia&quot;,       :less_than_a_minute  =&gt; &quot;alle minuutti&quot;,       :one_minute          =&gt; &quot;1 minuutti&quot;,       :x_minutes           =&gt; &quot;%d minuuttia&quot;,       :one_hour            =&gt; &quot;noin tunti&quot;,       :x_hours             =&gt; &quot;noin %d tuntia&quot;,       :one_day             =&gt; &quot;1 päivä&quot;,       :x_days              =&gt; &quot;%d päivää&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Monthnames</td>
+          <td>=</td>
+          <td class="context-item-value">[nil] + %w{tammikuu helmikuu maaliskuu huhtikuu toukokuu kesäkuu heinäkuu elokuu syyskuu lokakuu marraskuu joulukuu}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Rails uses Month names in <a href="../Date.html">Date</a> and time select
+boxes (<tt>date_select</tt> and <tt>datetime_select</tt> ) Currently (as of
+version 1.1.6), Rails doesn&#8217;t use daynames
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">AbbrMonthnames</td>
+          <td>=</td>
+          <td class="context-item-value">[nil] + %w{tammi helmi maalis huhti touko kesä heinä elo syys loka marras joulu}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Daynames</td>
+          <td>=</td>
+          <td class="context-item-value">%w{sunnuntai maanantai tiistai keskiviikko torstai perjantai lauantai}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">AbbrDaynames</td>
+          <td>=</td>
+          <td class="context-item-value">%w{su ma ti ke to pe la}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateFormats</td>
+          <td>=</td>
+          <td class="context-item-value">{       :default  =&gt; &quot;%e.%m.%Y&quot;,       :short    =&gt; &quot;%d.%m.&quot;,       :long     =&gt; &quot;%e. %Bta %Y&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="../Date.html">Date</a> and time format syntax explained in <a
+href="http://www.rubycentral.com/ref/ref_c_time.html#strftime">www.rubycentral.com/ref/ref_c_time.html#strftime</a>
+These are sent to strftime that Ruby&#8217;s date and time handlers use
+internally Same options as php (that has a better list: <a
+href="http://www.php.net/strftime">www.php.net/strftime</a> )
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TimeFormats</td>
+          <td>=</td>
+          <td class="context-item-value">{       :default  =&gt; &quot;%a %Bn %e. %H:%M:%S %Z %Y&quot;,       :short    =&gt; &quot;%d.%m.%Y %H:%M&quot;,       :long     =&gt; &quot;%a %e. %Bta %Y %T&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateSelectOrder</td>
+          <td>=</td>
+          <td class="context-item-value">{       :order    =&gt; [:day, :month, :year]</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Set the order of <tt>date_select</tt> and <tt>datetime_select</tt> boxes
+Note that at present, the current Rails version only supports ordering of
+date_select boxes
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Texts</td>
+          <td>=</td>
+          <td class="context-item-value">{       :less_than_x_seconds =&gt; &quot;moins de %d secondes&quot;,       :half_a_minute       =&gt; &quot;une demi-minute&quot;,       :less_than_a_minute  =&gt; &quot;moins d'une minute&quot;,       :one_minute          =&gt; &quot;1 minute&quot;,       :x_minutes           =&gt; &quot;%d minutes&quot;,       :one_hour            =&gt; &quot;à peut près 1 heure&quot;,       :x_hours             =&gt; &quot;à peu près %d heures&quot;,       :one_day             =&gt; &quot;1 jour&quot;,       :x_days              =&gt; &quot;%d jours&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Monthnames</td>
+          <td>=</td>
+          <td class="context-item-value">[nil] + %w{Janvier Février Mars Avril Mai Juin Juillet Août Septembre Octobre Novembre Decembre}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Rails uses Month names in <a href="../Date.html">Date</a> and time select
+boxes (<tt>date_select</tt> and <tt>datetime_select</tt> ) Currently (as of
+version 1.1.6), Rails doesn&#8217;t use daynames
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">AbbrMonthnames</td>
+          <td>=</td>
+          <td class="context-item-value">[nil] + %w{Jan Fev Mar Avr Mai Jui Jul Aoû Sep Oct Nov Dec}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Daynames</td>
+          <td>=</td>
+          <td class="context-item-value">%w{Dimanche Lundi Mardi Mercredi Jeudi Vendredi Samedi}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">AbbrDaynames</td>
+          <td>=</td>
+          <td class="context-item-value">%w{Dim Lun Mar Mer Jeu Ven Sam}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateFormats</td>
+          <td>=</td>
+          <td class="context-item-value">{       :default  =&gt; &quot;%Y-%m-%d&quot;,       :short    =&gt; &quot;%b %e&quot;,       :long     =&gt; &quot;%B %e, %Y&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="../Date.html">Date</a> and time format syntax explained in <a
+href="http://www.rubycentral.com/ref/ref_c_time.html#strftime">www.rubycentral.com/ref/ref_c_time.html#strftime</a>
+These are sent to strftime that Ruby&#8217;s date and time handlers use
+internally Same options as php (that has a better list: <a
+href="http://www.php.net/strftime">www.php.net/strftime</a> )
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TimeFormats</td>
+          <td>=</td>
+          <td class="context-item-value">{       :default  =&gt; &quot;%a, %d %b %Y %H:%M:%S %z&quot;,       :short    =&gt; &quot;%d %b %H:%M&quot;,       :long     =&gt; &quot;%B %d, %Y %H:%M&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateSelectOrder</td>
+          <td>=</td>
+          <td class="context-item-value">{       :order    =&gt; [:year, :month, :day]</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Set the order of <tt>date_select</tt> and <tt>datetime_select</tt> boxes
+Note that at present, the current Rails version only supports ordering of
+date_select boxes
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Texts</td>
+          <td>=</td>
+          <td class="context-item-value">{      :less_than_x_seconds =&gt; &quot;moins de %d secondes&quot;,      :half_a_minute       =&gt; &quot;30 secondes&quot;,      :less_than_a_minute  =&gt; &quot;moins d'une minute&quot;,      :one_minute          =&gt; &quot;1 minute&quot;,      :x_minutes           =&gt; &quot;%d minutes&quot;,      :one_hour            =&gt; &quot;environ 1 heure&quot;,      :x_hours             =&gt; &quot;environ %d heures&quot;,      :one_day             =&gt; &quot;1 jour&quot;,      :x_days              =&gt; &quot;%d jours&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Monthnames</td>
+          <td>=</td>
+          <td class="context-item-value">[nil] + %w{Janvier Février Mars Avril Mai Juin Juillet Août Septembre Octobre Novembre Décembre}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">AbbrMonthnames</td>
+          <td>=</td>
+          <td class="context-item-value">[nil] + %w{Jan Fev Mar Avr Mai Jun Jui Aou Sep Oct Nov Dec}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Daynames</td>
+          <td>=</td>
+          <td class="context-item-value">%w{Dimanche Lundi Mardi Mercredi Jeudi Vendredi Samedi}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">AbbrDaynames</td>
+          <td>=</td>
+          <td class="context-item-value">%w{Dim Lun Mar Mer Jeu Ven Sam}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateFormats</td>
+          <td>=</td>
+          <td class="context-item-value">{      :default  =&gt; &quot;%Y-%m-%d&quot;,      :short    =&gt; &quot;%b %e&quot;,      :long     =&gt; &quot;%B %e, %Y&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TimeFormats</td>
+          <td>=</td>
+          <td class="context-item-value">{      :default  =&gt; &quot;%a, %d %b %Y %H:%M:%S %z&quot;,      :short    =&gt; &quot;%d %b %H:%M&quot;,      :long     =&gt; &quot;%B %d, %Y %H:%M&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateSelectOrder</td>
+          <td>=</td>
+          <td class="context-item-value">{      :order    =&gt; [:year, :month, :day]</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">Texts</td>
@@ -333,6 +703,13 @@
           <td class="context-item-name">Monthnames</td>
           <td>=</td>
           <td class="context-item-value">[nil] + %w{Januari Februari Maart April Mei Juni Juli Augustus September October November December}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Rails uses Month names in <a href="../Date.html">Date</a> and time select
+boxes (<tt>date_select</tt> and <tt>datetime_select</tt> ) Currently (as of
+version 1.1.6), Rails doesn&#8217;t use daynames
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">AbbrMonthnames</td>
@@ -353,6 +730,15 @@
           <td class="context-item-name">DateFormats</td>
           <td>=</td>
           <td class="context-item-value">{       :default  =&gt; &quot;%Y-%m-%d&quot;,       :short    =&gt; &quot;%b %e&quot;,       :long     =&gt; &quot;%B %e, %Y&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="../Date.html">Date</a> and time format syntax explained in <a
+href="http://www.rubycentral.com/ref/ref_c_time.html#strftime">www.rubycentral.com/ref/ref_c_time.html#strftime</a>
+These are sent to strftime that Ruby&#8217;s date and time handlers use
+internally Same options as php (that has a better list: <a
+href="http://www.php.net/strftime">www.php.net/strftime</a> )
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">TimeFormats</td>
@@ -363,6 +749,13 @@
           <td class="context-item-name">DateSelectOrder</td>
           <td>=</td>
           <td class="context-item-value">{       :order    =&gt; [:day, :month, :year]</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Set the order of <tt>date_select</tt> and <tt>datetime_select</tt> boxes
+Note that at present, the current Rails version only supports ordering of
+date_select boxes
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">Texts</td>
@@ -372,7 +765,14 @@
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">Monthnames</td>
           <td>=</td>
-          <td class="context-item-value">[nil] + %w{Januarrry Februarrry Marrrch April May June July August Sebtemberrr Octoberrr Novemberrr Decemberrr}</td>
+          <td class="context-item-value">[nil] + %w{January February March April May June July August September October November December}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Rails uses Month names in <a href="../Date.html">Date</a> and time select
+boxes (<tt>date_select</tt> and <tt>datetime_select</tt> ) Currently (as of
+version 1.1.6), Rails doesn&#8217;t use daynames
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">AbbrMonthnames</td>
@@ -393,6 +793,15 @@
           <td class="context-item-name">DateFormats</td>
           <td>=</td>
           <td class="context-item-value">{       :default  =&gt; &quot;%Y-%m-%d&quot;,       :short    =&gt; &quot;%b %e&quot;,       :long     =&gt; &quot;%B %e, %Y&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="../Date.html">Date</a> and time format syntax explained in <a
+href="http://www.rubycentral.com/ref/ref_c_time.html#strftime">www.rubycentral.com/ref/ref_c_time.html#strftime</a>
+These are sent to strftime that Ruby&#8217;s date and time handlers use
+internally Same options as php (that has a better list: <a
+href="http://www.php.net/strftime">www.php.net/strftime</a> )
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">TimeFormats</td>
@@ -403,6 +812,13 @@
           <td class="context-item-name">DateSelectOrder</td>
           <td>=</td>
           <td class="context-item-value">{       :order    =&gt; [:year, :month, :day]</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Set the order of <tt>date_select</tt> and <tt>datetime_select</tt> boxes
+Note that at present, the current Rails version only supports ordering of
+date_select boxes
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">Texts</td>
@@ -413,6 +829,13 @@
           <td class="context-item-name">Monthnames</td>
           <td>=</td>
           <td class="context-item-value">[nil] + %w{januari februari mars april maj juni juli augusti september oktober november december}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Rails uses Month names in <a href="../Date.html">Date</a> and time select
+boxes (<tt>date_select</tt> and <tt>datetime_select</tt> ) Currently (as of
+version 1.1.6), Rails doesn&#8217;t use daynames
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">AbbrMonthnames</td>
@@ -433,6 +856,15 @@
           <td class="context-item-name">DateFormats</td>
           <td>=</td>
           <td class="context-item-value">{       :default  =&gt; &quot;%Y-%m-%d&quot;,       :short    =&gt; &quot;%b %e&quot;,       :long     =&gt; &quot;%B %e, %Y&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="../Date.html">Date</a> and time format syntax explained in <a
+href="http://www.rubycentral.com/ref/ref_c_time.html#strftime">www.rubycentral.com/ref/ref_c_time.html#strftime</a>
+These are sent to strftime that Ruby&#8217;s date and time handlers use
+internally Same options as php (that has a better list: <a
+href="http://www.php.net/strftime">www.php.net/strftime</a> )
+
+</td>
         </tr>
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">TimeFormats</td>
@@ -443,6 +875,76 @@
           <td class="context-item-name">DateSelectOrder</td>
           <td>=</td>
           <td class="context-item-value">{       :order    =&gt; [:day, :month, :year]</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Set the order of <tt>date_select</tt> and <tt>datetime_select</tt> boxes
+Note that at present, the current Rails version only supports ordering of
+date_select boxes
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Texts</td>
+          <td>=</td>
+          <td class="context-item-value">{       :less_than_x_seconds =&gt; &quot;less than %d seconds&quot;,       :half_a_minute       =&gt; &quot;half a minute&quot;,       :less_than_a_minute  =&gt; &quot;less than a minute&quot;,       :one_minute          =&gt; &quot;1 minute&quot;,       :x_minutes           =&gt; &quot;%d minutes&quot;,       :one_hour            =&gt; &quot;about 1 hour&quot;,       :x_hours             =&gt; &quot;about %d hours&quot;,       :one_day             =&gt; &quot;1 day&quot;,       :x_days              =&gt; &quot;%d days&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Monthnames</td>
+          <td>=</td>
+          <td class="context-item-value">[nil] + %w{January February March April May June July August September October November December}</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Monthnames used by Rails in <a href="../Date.html">Date</a> and time select
+boxes (<tt>date_select</tt> and <tt>datetime_select</tt> ) Currently (as of
+version 1.1.6), Rails doesn&#8217;t use daynames
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">AbbrMonthnames</td>
+          <td>=</td>
+          <td class="context-item-value">[nil] + %w{Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Daynames</td>
+          <td>=</td>
+          <td class="context-item-value">%w{Sunday Monday Tuesday Wednesday Thursday Friday Saturday}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">AbbrDaynames</td>
+          <td>=</td>
+          <td class="context-item-value">%w{Sun Mon Tue Wed Thu Fri Sat}</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateFormats</td>
+          <td>=</td>
+          <td class="context-item-value">{       :default  =&gt; &quot;%Y-%m-%d&quot;,       :short    =&gt; &quot;%b %e&quot;,       :long     =&gt; &quot;%B %e, %Y&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="../Date.html">Date</a> and time format syntax explained in <a
+href="http://www.rubycentral.com/ref/ref_c_time.html#strftime">www.rubycentral.com/ref/ref_c_time.html#strftime</a>
+These are sent to strftime that Ruby&#8217;s date and time handlers use
+internally Same options as php (that has a better list: <a
+href="http://www.php.net/strftime">www.php.net/strftime</a> )
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TimeFormats</td>
+          <td>=</td>
+          <td class="context-item-value">{       :default  =&gt; &quot;%a, %d %b %Y %H:%M:%S %z&quot;,       :short    =&gt; &quot;%d %b %H:%M&quot;,       :long     =&gt; &quot;%B %d, %Y %H:%M&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DateSelectOrder</td>
+          <td>=</td>
+          <td class="context-item-value">{       :order    =&gt; [:year, :month, :day]</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Set the order of <tt>date_select</tt> and <tt>datetime_select</tt> boxes
+Note that at present, the current Rails version only supports ordering of
+date_select boxes
+
+</td>
         </tr>
         </table>
       </div>
