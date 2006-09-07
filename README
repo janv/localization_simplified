@@ -47,9 +47,12 @@ Currently supported languages:
 * English (for running test cases and comparing to normal texts)
 * German 
 * Spanish
+* French
 * Dutch
 * Danish
 * Swedish
+* Finnish
+* Canadian French
 * Swedish Chef, and Pirate talk (just for the fun of it)
 * any other language you want. Just dump your translation in the /lib folder 
 
@@ -80,15 +83,20 @@ It's not required for working, I guess, but other encodings could bring you in t
 === TODO 
 * Rake task that modifies all view-files and converts them to UTF-8 
 * Also a task that modifies all generators to use UTF-8
-* Other helpers that need modification 
+* Other helpers that need modification?
   (your suggestions and contributions are welcome)
-* Add test cases to verify it works properly
-* In particular, make a test that compares original Rails texts to the texts of 
-  the overridden functions from this plugin
+* Add more test cases to verify it works properly
 * Modify to_boolean_select_tag with localized true/false?? (normally, I would 
   prefer to use a checkbox for this and NOT a select tag)
+* Verify that the lang-files supplied are relevant
 
 === DONE
+* Added comments in all lang-files, thanks Jarkko Laine for the idea (2006-09-07)
+* Bugfix: Replaced hardcoded string in distance_of_time_in_words when :include_seconds was false (2006-08-30)
+* Added Canadian French translation (thanks Daniel) (2006-08-25)
+* Added comments in lang-file for documentation of how to localize (2006-08-25)
+* Added French translation (thanks Fred Cavazza) (2006-08-25)
+* Added Finnish translation (thanks Jarkko Laine) (2006-08-25)
 * Bugfix re-added HTTP header for UTF-8. Necessary for some lang-files (2004-08-24)
 * Renamed test files to make rake test command work (2006-08-23)
 * Localized time "Wed Aug 23 12:38:22 Romance Daylight Time 2006" =>
@@ -102,7 +110,7 @@ It's not required for working, I guess, but other encodings could bring you in t
 * Added tests for plugin (2006-08-13)
 * Localized version of Array.to_sentence (2006-08-09)
 * Added test scaffold  (2006-08-09)
-* Added swedish language, thanks to Olle Johnsson (2006-08-09)
+* Added swedish language, thanks to Olle Jonsson (2006-08-09)
 * Localized version of to_currency helper (2006-08-07)  
 
 === Your help
