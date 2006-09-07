@@ -127,3 +127,20 @@ Put this file in your applications view directory, add a controller action "help
 	  </tr>
 		
 	</table>
+	
+	<h3>date_select and datetime_select tests</h3>
+<%
+
+
+%>
+<p>
+<label for="kunde_date">Test order and localized content of date_select</label><br />
+<%= date_select :testmodel, :date %>	
+
+</p>
+
+<p>
+<label for="kunde_date">Test order and localized content of datetime_select</label><br />
+<%= datetime_select :testmodel, :datetime %>	
+
+</p>
