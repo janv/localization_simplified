@@ -94,12 +94,14 @@ class LocalizationSimplifiedTest < Test::Unit::TestCase
 		assert messages[:half_a_minute]                                              , a.time_ago_in_words(31.seconds.ago, true)
 		assert messages[:less_than_a_minute]                                         , a.time_ago_in_words(50.seconds.ago)
 		assert messages[:one_minute]                                                 , a.time_ago_in_words(80.seconds.ago)
+		assert messages[:one_hour]                                                   , a.time_ago_in_words(50.minutes.ago)
+		assert messages[:one_day]                                                    , a.time_ago_in_words(1.day.ago)
+		assert messages[:one_month]                                                  , a.time_ago_in_words(1.month.ago)
+		assert messages[:one_year]                                                   , a.time_ago_in_words(1.year.ago)
 		# FIXME: 3 tests below are not tested, as they require more logic in the test
 		# Please fix, if possible and simple
 #		assert format(messages[:x_minutes], distance_in_minutes)                     , a.time_ago_in_words(4.minutes.ago)
-		assert messages[:one_hour]                                                   , a.time_ago_in_words(50.minutes.ago)
 #		assert format( messages[:x_hours], (distance_in_minutes.to_f / 60.0).round ) , a.time_ago_in_words(4.hours.ago)
-		assert messages[:one_day]                                                    , a.time_ago_in_words(1.day.ago)
 #		assert format( messages[:x_days], (distance_in_minutes / 1440).round )       , a.time_ago_in_words(4.days.ago)
 	end
 	
