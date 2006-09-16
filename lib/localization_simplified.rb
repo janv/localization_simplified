@@ -23,7 +23,7 @@ module LocalizationSimplified
     distance_in_minutes = (((to_time - from_time).abs)/60).round
     distance_in_seconds = ((to_time - from_time).abs).round
     
-    #First, I invent a variable (makes it easier for future i10n)
+    #First, I invent a variable (makes it easier for future localization)
     messages = LocalizationSimplified::DateHelper::Texts #localized
     case distance_in_minutes
       when 0..1
@@ -45,7 +45,7 @@ module LocalizationSimplified
       when 43200..86399    then messages[:one_month]
       when 86400..525959   then format( messages[:x_months], (distance_in_minutes / 43200).round )
       when 525960..1051919 then messages[:one_year]
-      else                 then format( messages[:x_years], (distance_in_minutes / 525960).round )
+      else                      format( messages[:x_years], (distance_in_minutes / 525960).round )
     end
   end 
 

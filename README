@@ -91,6 +91,7 @@ It's not required for working, I guess, but other encodings could bring you in t
 * Verify that the lang-files supplied are relevant
 
 === DONE
+* Bugfix removed incorrect 'then' after 'else' (thanks Michele Franzin)(2006-09-16) 
 * Added augmented and corrected distance_of_time_in_words from Rails trunk (2006-09-07)
 * Added date_select and datetime_select on the helper page (2006-09-07)
 * Updated dutch date-time formats, thanks Jeroen Houben (2006-09-07)
