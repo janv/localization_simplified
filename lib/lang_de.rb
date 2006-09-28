@@ -1,12 +1,11 @@
 # lang_de.rb
 # German translation file
-# Translation by Jesper Rønn-Jensen ( http://justaddwater.dk/ ), inspired by  example on 
-# Rails wiki: http://wiki.rubyonrails.org/rails/pages/OverridingRailsMessagesInAnotherLanguage
+# Translation by Benedikt Huber
 
 module LocalizationSimplified
   About = {
     :lang => "de",
-    :updated => "2006-09-07"
+    :updated => "2006-09-28"
   }
 
   class ActiveRecord
@@ -33,9 +32,9 @@ module LocalizationSimplified
       :taken               => "ist schon vergeben",
       :not_a_number        => "ist keine Zahl",
       #Jespers additions:
-      :error_translation   => "Fehl",
-      :error_header        => "%s verhinderte dieser %s gespeichert werden",
-      :error_subheader     => "Es gab probleme mit dem folgenden:"
+      :error_translation   => "Fehler",
+      :error_header        => "%s hinderte %s daran, gespeichert zu werden",
+      :error_subheader     => "Es gab Probleme aufgrund des Folgenden: "
     }
   end
 
@@ -43,11 +42,11 @@ module LocalizationSimplified
   class DateHelper
     Texts = {
       :less_than_x_seconds => "weniger als %d Sekunden",
-      :half_a_minute       => "hälfte ein Minute",
-      :less_than_a_minute  => "weniger als ein Minute",
-      :one_minute          => "1 minute",
+      :half_a_minute       => "eine halbe Minute",
+      :less_than_a_minute  => "weniger als eine Minute",
+      :one_minute          => "1 Minute",
       :x_minutes           => "%d Minuten",
-      :one_hour            => "ungefähr  1 Stunden",
+      :one_hour            => "ungefähr 1 Stunde",
       :x_hours             => "ungefähr %d Stunden",
       :one_day             => "1 Tag",
       :x_days              => "%d Tage",
@@ -60,10 +59,10 @@ module LocalizationSimplified
     # Rails uses Month names in Date and time select boxes 
     # (+date_select+ and +datetime_select+ )
     # Currently (as of version 1.1.6), Rails doesn't use daynames
-    Monthnames     = [nil] + %w{Januar Februar Märtz April Mai Juni Juli August September Oktober November Dezember}
-    AbbrMonthnames = [nil] + %w{Jan Feb Mrz Apr Mai Jun Jul Aug Sep Oct Nov Dez}
-    Daynames       = %w{Sontag Montag Dienstag Mittwoch Donnerstag Freitag Samstag}
-    AbbrDaynames   = %w{Son Mon Die Mit Don Fre Sam}
+    Monthnames     = [nil] + %w{Januar Februar März April Mai Juni Juli August September Oktober November Dezember}
+    AbbrMonthnames = [nil] + %w{Jan Feb Mrz Apr Mai Jun Jul Aug Sep Okt Nov Dez}
+    Daynames       = %w{Sonntag Montag Dienstag Mittwoch Donnerstag Freitag Samstag}
+    AbbrDaynames   = %w{So Mo Di Mi Do Fr Sa}
     
     # Date and time format syntax explained in http://www.rubycentral.com/ref/ref_c_time.html#strftime
     # These are sent to strftime that Ruby's date and time handlers use internally
@@ -75,9 +74,9 @@ module LocalizationSimplified
     }
 
     TimeFormats = {
-      :default  => "%a, %d %b %Y %H:%M:%S %z",
-      :short    => "%d %b %H:%M",
-      :long     => "%B %d, %Y %H:%M"
+      :default  => "%A, %d %B %Y %H:%M %Z",
+      :short    => "%d %b. %H:%M",
+      :long     => "%d %B %Y, %H:%M"
     }
     # Set the order of +date_select+ and +datetime_select+ boxes
     # Note that at present, the current Rails version only supports ordering of date_select boxes
