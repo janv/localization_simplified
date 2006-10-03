@@ -1,11 +1,11 @@
-# lang_es.rb
-# Spanish translation file. 
-# Translation by Luis Villa del Campo (www.grancomo.com)
-
+# lang_es-AR.rb
+# Argentinean-flavored Spanish translation file.
+# Translation by Damian Janowski damian.janowski@gmail.com
+# (based on lang_es.rb by Luis Villa del Campo)
 
 module LocalizationSimplified
   About = {
-    :lang => "es",
+    :lang => "es-ar",
     :updated => "2006-10-03"
   }
 
@@ -22,20 +22,20 @@ module LocalizationSimplified
     ErrorMessages = {
       :inclusion           => "no está incluido en la lista",
       :exclusion           => "está reservado",
-      :invalid             => "no es válido",
-      :confirmation        => "no coincide con la conformación",
+      :invalid             => "es inválido",
+      :confirmation        => "no coincide con la confirmación",
       :accepted            => "debe ser aceptado",
       :empty               => "no puede estar vacío",
-      :blank               => "no puede estar en blanco",# alternate, formulation: "is required"
-      :too_long            => "es demasiado largo (el máximo es %d caracteres)",
-      :too_short           => "es demasiado corto (el mínimo es %d caracteres)",
+      :blank               => "no puede estar en blanco", # alternate, formulation: "es requerido"
+      :too_long            => "es demasiado largo (el máximo es de %d caracteres)",
+      :too_short           => "es demasiado corto (el mínimo es de %d caracteres)",
       :wrong_length        => "no posee el largo correcto (debería ser de %d caracteres)",
-      :taken               => "ya está ocupado",
+      :taken               => "ya está tomado",
       :not_a_number        => "no es un número",
       #Jespers additions:
-      :error_translation   => "error",
-      :error_header        => "%s no permite guardar %s",
-      :error_subheader     => "Ha habido problemas con los siguientes campos:"
+      :error_translation   => "error ocurrió",
+      :error_header        => "%s al guardar su %s",
+      :error_subheader     => "Los siguientes campos presentan problemas:"
     }
   end
 
@@ -47,13 +47,13 @@ module LocalizationSimplified
       :less_than_a_minute  => "menos de un minuto",
       :one_minute          => "1 minuto",
       :x_minutes           => "%d minutos",
-      :one_hour            => "sobre una hora",
-      :x_hours             => "sobre %d horas",
+      :one_hour            => "una hora",
+      :x_hours             => "%d horas",
       :one_day             => "un día",
       :x_days              => "%d días",
-      :one_month           => "1 mes",
+      :one_month           => "un mes",
       :x_months            => "%d meses",
-      :one_year            => "1 año",
+      :one_year            => "un año",
       :x_years             => "%d años"
     }
 
@@ -70,14 +70,14 @@ module LocalizationSimplified
     # Same options as php (that has a better list: http://www.php.net/strftime )
     DateFormats = {
       :default  => "%Y-%m-%d",
-      :short    => "%b %e",
-      :long     => "%B %e, %Y"
+      :short    => "%e %b",
+      :long     => "%e de %B de %Y"
     }
 
     TimeFormats = {
-      :default  => "%a, %d %b %Y %H:%M:%S %z",
-      :short    => "%d %b %H:%M",
-      :long     => "%B %d, %Y %H:%M"
+      :default  => "%a, %d de %b de %Y %H:%M:%S %z",
+      :short    => "%b %d %H:%M",
+      :long     => "%d de %B de %Y %H:%M"
     }
     # Set the order of +date_select+ and +datetime_select+ boxes
     # Note that at present, the current Rails version only supports ordering of date_select boxes
@@ -90,10 +90,11 @@ module LocalizationSimplified
     # CurrencyOptions are used as default for +Number#to_currency()+
     # http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#M000449
     CurrencyOptions = {
-      :unit      => "€",
+      :unit      => "$",
       :separator => ",",             #unit separator (between integer part and fraction part)
       :delimiter => ".",             #delimiter between each group of thousands. Example: 1.234.567 
       :order     => [:unit, :number] #order is at present unsupported in Rails
+      #to support for instance Danish format, the order is different: Unit comes last (ex. "1.234,00 dkr.")
     }
   end
 
@@ -110,6 +111,10 @@ end
 
 # Use the inflector below to pluralize "error" from
 # @@default_error_messages[:error_translation] above (if necessary)
- Inflector.inflections do |inflect|
-   inflect.plural /^(error)$/i, '\1es'
- end
+Inflector.inflections do |inflect|
+#   inflect.plural /^(ox)$/i, '\1en'
+#   inflect.singular /^(ox)en/i, '\1'
+#   inflect.irregular 'person people'
+#   inflect.uncountable %w( information )
+  inflect.plural /^(error ocurrió)$/i, 'errores ocurrieron'
+end

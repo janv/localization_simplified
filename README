@@ -99,6 +99,7 @@ I added FIXME notes in the code to indicate where I also could use help.
 * Verify that the lang-files supplied are relevant
 
 === DONE
+* Added argentinian flavoured Spanish lang File + corrected bug in lang_es (thanks Damian Janowski) (2006-10-03)
 * German translation issues (thanks Christian W. Zuckschwerdt) (2006-10-03)
 * Fixed typo in README File (thanks Diego Algorta Casamayou) (2006-10-02)
 * Bugfix removed incorrect 'then' after 'else' (thanks Michele Franzin)(2006-09-16) 
