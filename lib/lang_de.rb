@@ -22,7 +22,7 @@ module LocalizationSimplified
       :inclusion           => "ist nicht in Liste gültiger Optionen enthalten",
       :exclusion           => "ist reserviert",
       :invalid             => "ist ungültig",
-      :confirmation        => "entspricht nicht der Best�tigung",
+      :confirmation        => "entspricht nicht der Bestätigung",
       :accepted            => "muß akzeptiert werden",
       :empty               => "darf nicht leer sein",
       :blank               => "darf nicht leer sein",# alternate, formulation: "is required"
@@ -110,5 +110,5 @@ end
 # Use the inflector below to pluralize "error" from
 # @@default_error_messages[:error_translation] above (if necessary)
  Inflector.inflections do |inflect|
-   inflect.plural /^(Fehl)$/i, '\1er'
+   inflect.uncountable %w( Fehler )
  end
