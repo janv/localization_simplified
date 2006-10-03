@@ -23,7 +23,7 @@ module LocalizationSimplified
       :exclusion           => "ist reserviert",
       :invalid             => "ist ungültig",
       :confirmation        => "entspricht nicht der Bestätigung",
-      :accepted            => "muß akzeptiert werden",
+      :accepted            => "muss akzeptiert werden",
       :empty               => "darf nicht leer sein",
       :blank               => "darf nicht leer sein",# alternate, formulation: "is required"
       :too_long            => "ist zu lang (höchstens %d Zeichen)",
