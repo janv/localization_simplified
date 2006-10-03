@@ -53,6 +53,7 @@ Currently supported languages:
 * Swedish
 * Finnish
 * Canadian French
+* Korean
 * Swedish Chef, and Pirate talk (just for the fun of it)
 * any other language you want. Just dump your translation in the /lib folder 
 
@@ -71,7 +72,7 @@ If your view files contains text, you probably also want to save your files as U
 
 === Installation:
 
-1) Just copy this plugin into your /vendor/lib folder
+1) Just copy this plugin into your /vendor/plugins/ folder
 2) Choose your lang-file in init.rb (default is Danish because I am Danish)
 
  
@@ -79,6 +80,13 @@ If your view files contains text, you probably also want to save your files as U
 A special note of WARNING: All files here are saved using UTF-8 encoding.
 It's not required for working, I guess, but other encodings could bring you in trouble.
 
+=== Your help
+Feel free to use, translate, modify and improve this code. 
+Do send me translations, improvements, etc. I cannot promise to use it, 
+but chances are that I will unless it bloats the code here completely or makes 
+code harder to maintain.
+
+I added FIXME notes in the code to indicate where I also could use help.
  
 === TODO 
 * Rake task that modifies all view-files and converts them to UTF-8 
@@ -91,6 +99,8 @@ It's not required for working, I guess, but other encodings could bring you in t
 * Verify that the lang-files supplied are relevant
 
 === DONE
+* German translation issues (thanks Christian W. Zuckschwerdt) (2006-10-03)
+* Fixed typo in README File (thanks Diego Algorta Casamayou) (2006-10-02)
 * Bugfix removed incorrect 'then' after 'else' (thanks Michele Franzin)(2006-09-16) 
 * Added augmented and corrected distance_of_time_in_words from Rails trunk (2006-09-07)
 * Added date_select and datetime_select on the helper page (2006-09-07)
@@ -119,13 +129,6 @@ It's not required for working, I guess, but other encodings could bring you in t
 * Added swedish language, thanks to Olle Jonsson (2006-08-09)
 * Localized version of to_currency helper (2006-08-07)  
 
-=== Your help
-Feel free to use, translate, modify and improve this code. 
-Do send me translations, improvements, etc. I cannot promise to use it, 
-but chances are that I will unless it bloats the code here completely or makes 
-code harder to maintain.
-
-I added FIXME notes in the code to indicate where I also could use help.
 
 === Credits
 This plugin uses a few bits and pieces from other Rails plugins GLoc (http://rubyforge.org/projects/gloc/) and swe_rails (http://opensource.ki.se/swe_rails.html)
