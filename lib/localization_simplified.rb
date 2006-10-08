@@ -2,9 +2,9 @@
 # Really simple localization for Rails
 # By Jesper Rønn-Jensen ( http://justaddwater.dk/ )
 # Plugin available at http://rubyforge.org/projects/l10n-simplified/
-# 
+#
 module LocalizationSimplified
-  @@ignore = "\xFF\xFF\xFF\xFF" # %% == Literal "%" character 
+  @@ignore = "\xFF\xFF\xFF\xFF" # %% == Literal "%" character
   # substitute all daynames and monthnames with localized names
   # from RUtils plugin
   def self.localize_strftime(date='%d.%m.%Y', time='')
@@ -22,7 +22,7 @@ module LocalizationSimplified
     to_time = to_time.to_time if to_time.respond_to?(:to_time)
     distance_in_minutes = (((to_time - from_time).abs)/60).round
     distance_in_seconds = ((to_time - from_time).abs).round
-    
+
     #First, I invent a variable (makes it easier for future localization)
     messages = LocalizationSimplified::DateHelper::Texts #localized
     case distance_in_minutes
@@ -35,8 +35,8 @@ module LocalizationSimplified
           when 21..40      then messages[:half_a_minute]
           when 41..59      then messages[:less_than_a_minute]
           else                  messages[:one_minute]
-        end                
-                                 
+        end
+
       when 2..44           then format(messages[:x_minutes], distance_in_minutes)
       when 45..89          then messages[:one_hour]
       when 90..1439        then format( messages[:x_hours], (distance_in_minutes.to_f / 60.0).round )
@@ -47,13 +47,13 @@ module LocalizationSimplified
       when 525960..1051919 then messages[:one_year]
       else                      format( messages[:x_years], (distance_in_minutes / 525960).round )
     end
-  end 
+  end
 
 
 end
 
 
-module ActiveRecord 
+module ActiveRecord
   class Errors
     #Error messages modified in lang file
     @@default_error_messages.update(LocalizationSimplified::ActiveRecord::ErrorMessages)
@@ -87,7 +87,7 @@ module ActionView
       end
 
     end
-    
+
 
     # Modify DateHelper to use text from lang-file
     module DateHelper
@@ -101,7 +101,7 @@ module ActionView
   end
 end
 
-# Give default settings to number_to_currency() 
+# Give default settings to number_to_currency()
 module ActionView
   module Helpers
     module NumberHelper
@@ -113,25 +113,25 @@ module ActionView
         orig_number_to_currency(number, options)
       end
     end
-  
+
     module DateHelper
       alias_method :orig_date_select, :date_select
-      
+
       # Blend default options with localized :order option
       def date_select(object_name, method, options = {})
         options.reverse_merge!(LocalizationSimplified::DateHelper::DateSelectOrder)
         orig_date_select(object_name, method, options)
       end
-  
+
       alias_method :orig_datetime_select, :datetime_select
-  
-  
+
+
       # Blend default options with localized :order option
       def datetime_select(object_name, method, options = {})
         options.reverse_merge!(LocalizationSimplified::DateHelper::DateSelectOrder)
         orig_datetime_select(object_name, method, options)
       end
-      
+
     end
   end
 end
@@ -146,10 +146,10 @@ class Array
 end
 
 # Modification of ruby constants
-class Date 
+class Date
   #FIXME as these are defined as Ruby constants, they can't be overwritten
   MONTHNAMES         = LocalizationSimplified::DateHelper::Monthnames
-  #ABBR_MONTHNAMES    = LocalizationSimplified::DateHelper::AbbrMonthnames  #not in use by Rails
+  ABBR_MONTHNAMES    = LocalizationSimplified::DateHelper::AbbrMonthnames  
   #DAYNAMES           = LocalizationSimplified::DateHelper::Daynames        #not in use by Rails
   #ABBR_DAYNAMES      = LocalizationSimplified::DateHelper::AbbrDaynames    #not in use by Rails
 end
@@ -160,14 +160,14 @@ end
 # <% t = Time.parse('2006-12-25 13:55') %>
 # <%= t.to_formatted_s(:short) #=> outputs time in localized format %>
 # <%= t                        #=> outputs time in localized format %>
-class Time 
+class Time
   alias_method :old_strftime, :strftime
   # Pre-translate format of Time before the time string is translated by strftime.
   # The <tt>:default</tt> time format is changed by localizing month and daynames.
-  # Also Rails ActiveSupport allow us to modify the <tt>:default</tt> timeformatting string. 
+  # Also Rails ActiveSupport allow us to modify the <tt>:default</tt> timeformatting string.
   # Originally, its <tt>:default  => "%a, %d %b %Y %H:%M:%S %z"</tt> (RFC2822 names), but as it can be
   # modified in this plugin, and we can end up with a different file format in logfiles, etc
-  def strftime(date) 
+  def strftime(date)
     LocalizationSimplified::localize_strftime(date, self)
     old_strftime(date)
   end
@@ -178,7 +178,7 @@ end
 # Usage:
 # <% d = Date.parse('2006-12-25') %>
 # <%= d.to_formatted_s(:short) #=> outputs date in localized format %>
-# 
+#
 # FIXME The Time conversion still does not modify week day and month (for some reason)
 ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS.merge!(LocalizationSimplified::DateHelper::DateFormats)
 
@@ -188,7 +188,7 @@ ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS.merge!(Localizati
 # <% t = Time.parse('2006-12-25 13:55') %>
 # <%= t.to_formatted_s(:short) #=> outputs time in localized format %>
 # <%= t                        #=> outputs time in localized format %>
-# 
+#
 # FIXME The Time conversion still does not modify week day and month (for some reason)
 ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!(LocalizationSimplified::DateHelper::TimeFormats)
 
@@ -197,7 +197,7 @@ ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!(Localizati
 # Currently this modifies MySQL. Please add other databases you find necessary
 class ActionController::Base
    before_filter :configure_charsets
-  
+
   def configure_charsets(charset='utf-8')
     $KCODE = 'u'
     # Response header necessary with some lang-files (like lang_pirate.rb for some reason)
@@ -208,6 +208,6 @@ class ActionController::Base
     suppress(ActiveRecord::StatementInvalid) do
       ActiveRecord::Base.connection.execute 'SET NAMES UTF8'
     end
-  end 
+  end
 end
 
