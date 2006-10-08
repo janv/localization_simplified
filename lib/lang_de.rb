@@ -1,6 +1,7 @@
 # lang_de.rb
 # German translation file
 # Translation by Benedikt Huber
+# Additions by Matthias Tarasiewicz - parasew (at) gmail
 
 module LocalizationSimplified
   About = {
@@ -25,10 +26,10 @@ module LocalizationSimplified
       :confirmation        => "entspricht nicht der Bestätigung",
       :accepted            => "muss akzeptiert werden",
       :empty               => "darf nicht leer sein",
-      :blank               => "darf nicht leer sein",# alternate, formulation: "is required"
+      :blank               => "wird benötigt",# alternate, formulation: "is required"
       :too_long            => "ist zu lang (höchstens %d Zeichen)",
       :too_short           => "ist zu kurz (mindestens %d Zeichen)",
-      :wrong_length        => "hat eine falsche Länge (es sollten %d Zeichen sein)",
+      :wrong_length        => "hat eine falsche Länge (sollten %d Zeichen sein)",
       :taken               => "ist schon vergeben",
       :not_a_number        => "ist keine Zahl",
       #Jespers additions:
