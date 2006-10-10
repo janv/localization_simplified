@@ -1,6 +1,6 @@
 ﻿= Localization Simplified (LocalizationSimplified)
 
-Localization Simplified plugin for Ruby on Rails. Really simple localization. Written by Jesper Rønn-Jensen ( http://justaddwater.dk/ )
+Localization Simplified plugin for Ruby on Rails. Really simple localization. Written by Jesper RÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¸nn-Jensen ( http://justaddwater.dk/ )
 
 The goal is to have a dead simple plugin for one-language (non-english) Rails 
 applications. Many of the existing localization / internationalization plugins are 
@@ -20,27 +20,20 @@ process I can decide to change to a more advanced localization plugin (if necess
 This plugin modifies the following most used helpers for Rails
 * Sets UTF-8 content-type HTTP header
 * Sets UTF-8 connection to database 
-* Localized monthnames on date_select etc. (changing the order of Y-M-D, where Rails allows)
+* Localized monthnames on date_select etc. (changing the order of Y-M-D, on date_select and datetime_select from 0.7)
 * Localized ActiveRecord errors (and error headings)
 * Localized distance_of_time_in_words
-* Localized to_currency (but not changing the order of unit/currency)
-* Simple pluralization also available in the lang-file (but currently only used 
-  for pluralizing "error"=>"errors" in local language)
-* Uses standard Rails methods. In this way, there is no tedious rewrite of 
-  localization functions in your view files
+* Localized to_currency (from 0.7 also changing the order of unit/currency)
+* Simple pluralization also available in the lang-file 
+* Uses standard Rails methods. In this way, there is no tedious rewrite required 
+  to localize your view files
 
 
 === Limitations
 * More advanced features are not likely to be available here.
-* No translation of models or the like.
 * If you want support for multiple languages, use another L10N/I18n plugin, like 
   GLoc or Globalize
-* No support for re-ordering datetime_select fields or currency indicators.
-  But date_select IS re-ordered. Currently, Rails lacks support of :order on these,
-  but it can be done fairly easy and is already implemented in other frameworks.
-The reason why I have not reordered the datetime_select fields or currency is that 
-it will introduce an unnecessary dependency here (because functions have to be recoded).
-
+It could be a good idea to take a look at the [comparison chart](http://wiki.rubyonrails.org/rails/pages/InternationalizationComparison) on the Ruby on Rails wiki
 
 === Supported languages
 Curr	ently supported languages:
@@ -99,7 +92,7 @@ I added FIXME notes in the code to indicate where I also could use help.
   prefer to use a checkbox for this and NOT a select tag)
 * Verify that the lang-files supplied are relevant
 
-=== DONE
+=== DONE 
 * --- release 0.7 ---
 * Override +number_to_currency+ and +datetime_select+ to support :order 
   even though I prefer these changes to go into Rails Core (2006-10-10)
@@ -141,5 +134,5 @@ This plugin uses a few bits and pieces from other Rails plugins GLoc (http://rub
 
 
 Created 2006-07-28 by 
-Jesper Rønn-Jensen http://justaddwater.dk/ 
+Jesper RÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¸nn-Jensen http://justaddwater.dk/ 
 
