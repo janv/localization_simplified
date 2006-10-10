@@ -43,12 +43,13 @@ it will introduce an unnecessary dependency here (because functions have to be r
 
 
 === Supported languages
-Currently supported languages:
+Curr	ently supported languages:
 * English (for running test cases and comparing to normal texts)
 * German 
 * Spanish
 * French
 * Dutch
+* Italian
 * Danish
 * Swedish
 * Finnish
@@ -99,6 +100,9 @@ I added FIXME notes in the code to indicate where I also could use help.
 * Verify that the lang-files supplied are relevant
 
 === DONE
+* --- release 0.7 ---
+* Override +number_to_currency+ and +datetime_select+ to support :order 
+  even though I prefer these changes to go into Rails Core (2006-10-10)
 * Added italian lang file (thanks Michele Franzin) (2006-10-08)
 * Added argentinian flavoured Spanish lang File + corrected bug in lang_es (thanks Damian Janowski) (2006-10-03)
 * German translation issues (thanks Christian W. Zuckschwerdt) (2006-10-03)
