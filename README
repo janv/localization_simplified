@@ -66,9 +66,9 @@ If your view files contains text, you probably also want to save your files as U
 
 === Installation:
 
-1) Just copy this plugin into your /vendor/plugins/ folder
-2) Choose your lang-file in init.rb (default is Danish because I am Danish)
-
+1. Just copy this plugin into your /vendor/plugins/ folder
+2. Choose your lang-file in init.rb (default is Danish because I am Danish)
+3. no step three :)
  
 
 A special note of WARNING: All files here are saved using UTF-8 encoding.
