@@ -20,7 +20,7 @@ module LocalizationSimplified
     # of "error" and "errors" in the bottom of this file
     # 
     ErrorMessages = {
-      :inclusion           => "ist nicht in Liste gültiger Optionen enthalten",
+      :inclusion           => "ist nicht in der Liste gültiger Optionen enthalten",
       :exclusion           => "ist reserviert",
       :invalid             => "ist ungültig",
       :confirmation        => "entspricht nicht der Bestätigung",
@@ -29,13 +29,13 @@ module LocalizationSimplified
       :blank               => "wird benötigt",# alternate, formulation: "is required"
       :too_long            => "ist zu lang (höchstens %d Zeichen)",
       :too_short           => "ist zu kurz (mindestens %d Zeichen)",
-      :wrong_length        => "hat eine falsche Länge (sollten %d Zeichen sein)",
+      :wrong_length        => "hat eine falsche Länge (sollte %d Zeichen sein)",
       :taken               => "ist schon vergeben",
       :not_a_number        => "ist keine Zahl",
       #Jespers additions:
       :error_translation   => "Fehler",
       :error_header        => "%s hinderte %s daran, gespeichert zu werden",
-      :error_subheader     => "Es gab Probleme aufgrund des Folgenden: "
+      :error_subheader     => "Es gab folgende Probleme: "
     }
   end
 
