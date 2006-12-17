@@ -197,7 +197,7 @@ end
 
 # Modification of ruby constants
 class Date
-  #FIXME as these are defined as Ruby constants, they can't be overwritten
+  #FIXME as these are defined as Ruby constants, they can not be overwritten
   MONTHNAMES         = LocalizationSimplified::DateHelper::Monthnames
   ABBR_MONTHNAMES    = LocalizationSimplified::DateHelper::AbbrMonthnames
   #DAYNAMES           = LocalizationSimplified::DateHelper::Daynames        #not in use by Rails
@@ -254,9 +254,9 @@ class ActionController::Base
     @response.headers["Content-Type"] = "text/html; charset=utf-8"
 
     # Set connection charset. MySQL 4.0 doesn't support this so it
-    # will throw an error, MySQL 4.1 needs this
+    # will throw an error, MySQL 4.1+ needs this.
     suppress(ActiveRecord::StatementInvalid) do
-      ActiveRecord::Base.connection.execute 'SET NAMES UTF8'
+      ActiveRecord::Base.connection.execute "SET NAMES 'UTF8'"
     end
   end
 end
