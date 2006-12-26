@@ -27,7 +27,7 @@ module LocalizationSimplified
       :accepted            => "moet worden geaccepteerd",
       :empty               => "mag niet leeg zijn",
       :blank               => "mag niet blanko zijn",# alternate, formulation: "is required"
-      :too_long            => "is te land (maximum is %d karakters)",
+      :too_long            => "is te lang (maximum is %d karakters)",
       :too_short           => "is te kort (minimum is %d karakters)",
       :wrong_length        => "is de verkeerde lengte (dient %d karakters te zijn)",
       :taken               => "is reeds in gebruik",
@@ -51,16 +51,16 @@ module LocalizationSimplified
       :x_hours             => "ongeveer %d uur",
       :one_day             => "1 dag",
       :x_days              => "%d dagen",
-      :one_month           => "1 month",
-      :x_months            => "%d months",
-      :one_year            => "1 year",
-      :x_years             => "%d years"
+      :one_month           => "1 maand",
+      :x_months            => "%d maanden",
+      :one_year            => "1 jaar",
+      :x_years             => "%d jaar"
     }
     # Rails uses Month names in Date and time select boxes 
     # (+date_select+ and +datetime_select+ )
     # Currently (as of version 1.1.6), Rails doesn't use daynames
-    Monthnames     = [nil] + %w{Januari Februari Maart April Mei Juni Juli Augustus September October November December}
-    AbbrMonthnames = [nil] + %w{Jan Feb Mar Apr Mei Jun Jul Aug Sep Oct Nov Dec}
+    Monthnames     = [nil] + %w{Januari Februari Maart April Mei Juni Juli Augustus September Oktober November December}
+    AbbrMonthnames = [nil] + %w{Jan Feb Mar Apr Mei Jun Jul Aug Sep Okt Nov Dec}
     Daynames       = %w{Zondag Maandag Dinsdag Woensdag Donderdag Vrijdag Zaterdag}
     AbbrDaynames   = %w{Zo Ma Di Wo Do Vr Za}
     
