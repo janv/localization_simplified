@@ -40,6 +40,7 @@ Curr	ently supported languages:
 * English (for running test cases and comparing to normal texts)
 * German 
 * Spanish
+* Spanish (argentinian)
 * French
 * Dutch
 * Italian
@@ -83,16 +84,23 @@ code harder to maintain.
 I added FIXME notes in the code to indicate where I also could use help.
  
 === TODO 
+* Better tests to verify both hooks in Rails and this plugin
+* Better tests to verify each lang-file
 * Rake task that modifies all view-files and converts them to UTF-8 
 * Also a task that modifies all generators to use UTF-8
 * Other helpers that need modification?
   (your suggestions and contributions are welcome)
-* Add more test cases to verify it works properly
 * Modify to_boolean_select_tag with localized true/false?? (normally, I would 
   prefer to use a checkbox for this and NOT a select tag)
 * Verify that the lang-files supplied are relevant
 
 === DONE 
+* --- release 0.7.1 ---
+* Fixed RJS bug where javascript content-header was overwritten with text/html (thanks Jakob Skjerning)
+* Small language corrections by Wijnand Wiersma
+* PostGres friendly: Added quotes around ActiveRecord::Base.connection.execute "SET NAMES 'UTF8'" (thanks Wijnand Wiersma)
+* German language errors corrected by Matthias Tarasiewicz
+* Added "no step three" in installation section :)
 * --- release 0.7 ---
 * Fixed messed-up ø's and a few wording changes in README 
 * Override +number_to_currency+ and +datetime_select+ to support :order 
