@@ -1,0 +1,7 @@
+cd ..
+svn export l10n-simplified export\l10n-simplified-0.7.1
+(right-click to create zip file)
+
+tar -czf l10n-simplified-0.7.1.tar.gz l10n-simplified-0.7.1
+
+Create
