@@ -35,6 +35,10 @@ This plugin modifies the following most used helpers for Rails
   GLoc or Globalize
 It could be a good idea to take a look at the [comparison chart](http://wiki.rubyonrails.org/rails/pages/InternationalizationComparison) on the Ruby on Rails wiki
 
+=== Version notes
+* For Rails 1.1.x or below, use version 0.7.1 of this plugin
+* For Rails 1.2 or above, use version 0.8 (or higher) of this plugin
+
 === Supported languages
 Curr	ently supported languages:
 * English (for running test cases and comparing to normal texts)
