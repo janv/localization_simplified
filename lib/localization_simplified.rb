@@ -249,12 +249,13 @@ class ActionController::Base
    before_filter :configure_charsets
 
   def configure_charsets(charset='utf-8')
-    $KCODE = 'u'
+##    $KCODE = 'u'
     # Response header necessary with some lang-files (like lang_pirate.rb for some reason)
-    content_type = @headers["Content-Type"] || 'text/html'
-    if /^text\//.match(content_type)
-      @headers["Content-Type"] = "#{content_type}; charset=utf-8"
-    end
+##    @response.headers["Content-Type"] = "text/html; charset=utf-8
+##    content_type = @headers["Content-Type"] || 'text/html'
+##    if /^text\//.match(content_type)
+##      @headers["Content-Type"] = "#{content_type}; charset=utf-8"
+##    end
     # Set connection charset. MySQL 4.0 doesn't support this so it
     # will throw an error, MySQL 4.1+ needs this.
     suppress(ActiveRecord::StatementInvalid) do
