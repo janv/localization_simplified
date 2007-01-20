@@ -154,7 +154,6 @@ module ActionView
 
       alias_method :orig_datetime_select, :datetime_select
 
-
       # Blend default options with localized :order option
       def datetime_select(object_name, method, options = {})
         options.reverse_merge!(LocalizationSimplified::DateHelper::DateSelectOrder)
@@ -163,37 +162,7 @@ module ActionView
 
     end#module DateHelper
 
-    class InstanceTag
-      alias_method :orig_to_datetime_select_tag , :to_datetime_select_tag
-      # modify datetime_select to accept option :order (default is [:year, :month, :day] )
-      # This method is used in datetime_select calls
-      def to_datetime_select_tag(options = {})
-        defaults = { :discard_type => true }
-        options  = defaults.merge(options)
-        options_with_prefix = Proc.new { |position| options.merge(:prefix => "#{@object_name}[#{@method_name}(#{position}i)]") }
-        datetime = options[:include_blank] ? (value || nil) : (value || Time.now)
-        datetime_select = ''
-        options[:order] ||= [:year, :month, :day]
 
-        position = {:year => 1, :month => 2, :day => 3}
-
-        discard = {}
-        discard[:year]  = true if options[:discard_year]
-        discard[:month] = true if options[:discard_month]
-        discard[:day]   = true if options[:discard_day] or options[:discard_month]
-
-        options[:order].each do |param|
-          datetime_select << self.send("select_#{param}", datetime, options_with_prefix.call(position[param])) unless discard[param]
-        end
-        datetime_select << " &mdash; " + select_hour(datetime, options_with_prefix.call(4)) unless options[:discard_hour]
-        datetime_select << " : "       + select_minute(datetime, options_with_prefix.call(5)) unless options[:discard_minute] || options[:discard_hour]
-
-        datetime_select
-      end
-
-
-
-    end
   end
 end
 
