@@ -86,12 +86,14 @@ code harder to maintain.
 
 I added FIXME notes in the code to indicate where I also could use help.
  
-=== TODO 
+=== TODO / wishlist
 * A Rails application for testing L10n-simplified. This is top of my wish-list. 
   I'd like it to contain a test suite testing ActiveRecord errors, datehelper, necessary
   numberhelper etc. 
+* Rake task to create a release
 * Better tests to verify both hooks in Rails and this plugin
 * Better tests to verify each lang-file
+* Create rdoc in UTF-8 format and not including every lang-file (only lang_en.rb)
 * Rake task that modifies all view-files and converts them to UTF-8 
 * Also a task that modifies all generators to use UTF-8
 
