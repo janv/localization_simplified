@@ -31,31 +31,42 @@ end
 module ActionView
   module Helpers
 
-    #Modify ActiveRecord to use error message headers (text from lang-file)
-    module ActiveRecordHelper
-      alias_method :old_error_messages_for, :error_messages_for
-      def error_messages_for(object_name, options = {})
-        messages = ActiveRecord::Errors.default_error_messages
-        options = options.symbolize_keys
-        object = instance_variable_get("@#{object_name}")
-        if object && !object.errors.empty?
-          content_tag("div",
-            content_tag(
-              options[:header_tag] || "h2",
-              format( messages[:error_header], pluralize(object.errors.count, messages[:error_translation]), object_name.to_s.gsub("_", " ")  )
-              #"#{pluralize(object.errors.count, "error")} prohibited this #{object_name.to_s.gsub("_", " ")} from being saved"
-            ) +
-            content_tag("p", messages[:error_subheader]) +
-            content_tag("ul", object.errors.full_messages.collect { |msg| content_tag("li", msg) }),
-            "id" => options[:id] || "errorExplanation", "class" => options[:class] || "errorExplanation"
-          )
-        else
-          ""
-        end
-      end
+     #Modify ActiveRecord to use error message headers (text from lang-file)
+     module ActiveRecordHelper
+       alias_method :old_error_messages_for, :error_messages_for
 
-    end
+       def error_messages_for(*params)
+         options = params.last.is_a?(Hash) ? params.pop.symbolize_keys : {}
+         objects = params.collect {|object_name| instance_variable_get("@#{object_name}") }.compact
+         count   = objects.inject(0) {|sum, object| sum + object.errors.count }
+         unless count.zero?
+           html = {}
+           [:id, :class].each do |key|
+             if options.include?(key)
+               value = options[key]
+               html[key] = value unless value.blank?
+             else
+               html[key] = 'errorExplanation'
+             end
+           end
+           messages = ActiveRecord:: Errors.default_error_messages
+           header_message = format( messages[:error_header], 
+             pluralize(count, messages[:error_translation]), 
+             (options[:object_name] || 
+             	params.first).to_s.gsub("_", " "))
+           error_messages = objects.map {|object| object.errors.full_messages.map {|msg| content_tag(:li, msg) } }
+           content_tag(:div,
+             content_tag(options[:header_tag] || :h2, header_message) <<
+               content_tag(:p, messages[:error_subheader]) <<
+               content_tag(:ul, error_messages),
+             html
+           )
+         else
+           ''
+         end
+       end
 
+     end
 
     # Modify DateHelper to use text from lang-file
     module DateHelper
@@ -200,8 +211,8 @@ class Date
   #FIXME as these are defined as Ruby constants, they can not be overwritten
   MONTHNAMES         = LocalizationSimplified::DateHelper::Monthnames
   ABBR_MONTHNAMES    = LocalizationSimplified::DateHelper::AbbrMonthnames
-  #DAYNAMES           = LocalizationSimplified::DateHelper::Daynames        #not in use by Rails
-  #ABBR_DAYNAMES      = LocalizationSimplified::DateHelper::AbbrDaynames    #not in use by Rails
+  #DAYNAMES          = LocalizationSimplified::DateHelper::Daynames        #not in use by Rails
+  #ABBR_DAYNAMES     = LocalizationSimplified::DateHelper::AbbrDaynames    #not in use by Rails
 end
 
 # Modification of default Time format using Time.to_formatted_s(:default)
