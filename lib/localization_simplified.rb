@@ -1,4 +1,4 @@
-# LocalizationSimplified
+# LocalizationSimplified (L10n-simplified)
 # Really simple localization for Rails
 # By Jesper Rønn-Jensen ( http://justaddwater.dk/ )
 # Plugin available at http://rubyforge.org/projects/l10n-simplified/
@@ -15,9 +15,6 @@ module LocalizationSimplified
     date.gsub!(/%B/, LocalizationSimplified::DateHelper::Monthnames[time.mon])
     date.gsub!(@@ignore, '%%')
   end
-
-
-
 end
 
 
@@ -70,7 +67,6 @@ module ActionView
 
     # Modify DateHelper to use text from lang-file
     module DateHelper
-
       #Modify DateHelper distance_of_time_in_words
       alias_method :old_distance_of_time_in_words, :distance_of_time_in_words
       def distance_of_time_in_words(from_time, to_time = 0, include_seconds = false)
@@ -105,12 +101,9 @@ module ActionView
         end
       end
     end
-  end
-end
 
-# Give default settings to number_to_currency()
-module ActionView
-  module Helpers
+
+		# Give default settings to number_to_currency()
     module NumberHelper
       alias_method :orig_number_to_currency, :number_to_currency
       #modify number_to_currency to accept :order option
@@ -140,12 +133,10 @@ module ActionView
         end
         output
       end
-
-    end#module NumberHelper
+    end# module NumberHelper
 
     module DateHelper
       alias_method :orig_date_select, :date_select
-
       # Blend default options with localized :order option
       def date_select(object_name, method, options = {})
         options.reverse_merge!(LocalizationSimplified::DateHelper::DateSelectOrder)
@@ -153,18 +144,16 @@ module ActionView
       end
 
       alias_method :orig_datetime_select, :datetime_select
-
       # Blend default options with localized :order option
       def datetime_select(object_name, method, options = {})
         options.reverse_merge!(LocalizationSimplified::DateHelper::DateSelectOrder)
         orig_datetime_select(object_name, method, options)
       end
+    end #module DateHelper
 
-    end#module DateHelper
+  end #module Helpers
+end #module ActionView
 
-
-  end
-end
 
 class Array
   alias :orig_to_sentence :to_sentence
@@ -174,6 +163,7 @@ class Array
     orig_to_sentence(options)
   end
 end
+
 
 # Modification of ruby constants
 class Date
@@ -229,13 +219,6 @@ class ActionController::Base
    before_filter :configure_charsets
 
   def configure_charsets(charset='utf-8')
-##    $KCODE = 'u'
-    # Response header necessary with some lang-files (like lang_pirate.rb for some reason)
-##    @response.headers["Content-Type"] = "text/html; charset=utf-8
-##    content_type = @headers["Content-Type"] || 'text/html'
-##    if /^text\//.match(content_type)
-##      @headers["Content-Type"] = "#{content_type}; charset=utf-8"
-##    end
     # Set connection charset. MySQL 4.0 doesn't support this so it
     # will throw an error, MySQL 4.1+ needs this.
     suppress(ActiveRecord::StatementInvalid) do
