@@ -71,8 +71,8 @@ module LocalizationSimplified
     # Same options as php (that has a better list: http://www.php.net/strftime )
     DateFormats = {
       :default  => "%Y-%m-%d",
-      :short    => "%e %b",
-      :long     => "%e %B, %Y"
+      :short    => "%e. %b",
+      :long     => "%e. %B, %Y"
     }
 
     TimeFormats = {
