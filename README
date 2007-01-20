@@ -18,8 +18,7 @@ process I can decide to change to a more advanced localization plugin (if necess
 
 === What it does
 This plugin modifies the following most used helpers for Rails
-* Sets UTF-8 content-type HTTP header
-* Sets UTF-8 connection to database 
+* Sets UTF-8 connection to database (known to work with MySQL and PostgreSQL)
 * Localized monthnames on date_select etc. (changing the order of Y-M-D, on date_select and datetime_select from 0.7)
 * Localized ActiveRecord errors (and error headings)
 * Localized distance_of_time_in_words
@@ -66,7 +65,7 @@ Curr	ently supported languages:
 === Usage:
 in init.rb, set your language. That's it. Now your db connection is running UTF-8 and standard Rails output is localized.
 
-If your view files contains text, you probably also want to save your files as UTF-8.
+If your view files contains text containing non-English characters (such as ß,ö,ñ or å), you probably also want to save your files as UTF-8.
 
 
 === Installation:
@@ -88,17 +87,22 @@ code harder to maintain.
 I added FIXME notes in the code to indicate where I also could use help.
  
 === TODO 
+* A Rails application for testing L10n-simplified. This is top of my wish-list. 
+  I'd like it to contain a test suite testing ActiveRecord errors, datehelper, necessary
+  numberhelper etc. 
 * Better tests to verify both hooks in Rails and this plugin
 * Better tests to verify each lang-file
 * Rake task that modifies all view-files and converts them to UTF-8 
 * Also a task that modifies all generators to use UTF-8
-* Other helpers that need modification?
-  (your suggestions and contributions are welcome)
-* Modify to_boolean_select_tag with localized true/false?? (normally, I would 
-  prefer to use a checkbox for this and NOT a select tag)
-* Verify that the lang-files supplied are relevant
 
 === DONE 
+* --- release 0.8 ---
+* Works with Rails 1.2 (not working with earlier versions)
+* Whitespace/formatting modifications. Removed commented code not needed
+* Removed code from plugin because Rails 1.2 date_select and datetime_select 
+  now support :order
+* ActiveRecord hooks updated for Rails 1.2 (thanks Casper Fabricius)
+* Dots after day number in time formats (Danish), to keep it consistent with Date formats
 * --- release 0.7.1 ---
 * Fixed RJS bug where javascript content-header was overwritten with text/html (thanks Jakob Skjerning)
 * Small language corrections by Wijnand Wiersma
@@ -148,4 +152,5 @@ This plugin uses a few bits and pieces from other Rails plugins GLoc (http://rub
 
 Created 2006-07-28 by 
 Jesper Rønn-Jensen http://justaddwater.dk/ 
-
+http://rubyforge.org/projects/l10n-simplified/
+http://agilewebdevelopment.com/plugins/localization_simplified
