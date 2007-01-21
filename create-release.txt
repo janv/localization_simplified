@@ -7,6 +7,36 @@ cd export
 tar -czf l10n-simplified-0.8.tar.gz l10n-simplified-0.8
 
 
+# ==========
+# release file on rubyforge
+# ==========
+http://rubyforge/projects/l10n-simplified > files > admin > quick release:
+https://rubyforge.org/frs/admin/qrs.php?package_id=&group_id=2074
+* package ID: localization_simplified
+* Release name: localization_simplified v0.8 (for Rails 1.2+)
+* date, filename
+* File type: .zip or .gz
+* Processor type: any
+* Release notes (summary of release)
+* Changelog (from README)
+* Rememger add another upload file to release
+
+
+# ==========
+# update on www.agilewebdevelopment.com
+# ==========
+http://agilewebdevelopment.com/plugins/localization_simplified
+http://agilewebdevelopment.com/plugins/edit/344
+
+* short description should be updated with "current release" 
+* description updated from README file. From top down to Installation
+
+
+# ==========
+# update on Rails wiki comparison with version number
+# ==========
+http://wiki.rubyonrails.com/rails/pages/InternationalizationComparison
+
 
 
 # ==========
