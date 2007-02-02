@@ -23,7 +23,7 @@ module LocalizationSimplified
       :inclusion           => "no está incluido en la lista",
       :exclusion           => "está reservado",
       :invalid             => "no es válido",
-      :confirmation        => "no coincide con la conformación",
+      :confirmation        => "no coincide con la confirmación",
       :accepted            => "debe ser aceptado",
       :empty               => "no puede estar vacío",
       :blank               => "no puede estar en blanco",# alternate, formulation: "is required"
