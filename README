@@ -39,20 +39,22 @@ It could be a good idea to take a look at the [comparison chart](http://wiki.rub
 * For Rails 1.2 or above, use version 0.8 (or higher) of this plugin
 
 === Supported languages
-Curr	ently supported languages:
+Currently supported languages:
+* Danish
+* Dutch
 * English (for running test cases and comparing to normal texts)
+* Finnish
+* French
+* French (Canadian)
 * German 
+* Italian
+* Korean
+* Norwegian
 * Spanish
 * Spanish (argentinian)
-* French
-* Dutch
-* Italian
-* Danish
 * Swedish
-* Finnish
-* Canadian French
-* Korean
-* Swedish Chef, and Pirate talk (just for the fun of it)
+* Swedish Chef, and 
+* Pirate talk (just for the fun of it)
 * any other language you want. Just dump your translation in the /lib folder 
 
 === Download code
@@ -73,7 +75,7 @@ If your view files contains text containing non-English characters (such as ß,�
 1. Just copy this plugin into your /vendor/plugins/ folder
 2. Choose your lang-file in init.rb (default is Danish because I am Danish)
 3. no step three :)
- 
+
 
 A special note of WARNING: All files here are saved using UTF-8 encoding.
 It's not required for working, I guess, but other encodings could bring you in trouble.
@@ -98,6 +100,7 @@ I added FIXME notes in the code to indicate where I also could use help.
 * Also a task that modifies all generators to use UTF-8
 
 === DONE 
+* Added Norwegian (thanks Fredrik Bach)
 * --- release 0.8 ---
 * Works with Rails 1.2 (not working with earlier versions)
 * Whitespace/formatting modifications. Removed commented code not needed
@@ -153,6 +156,6 @@ This plugin uses a few bits and pieces from other Rails plugins GLoc (http://rub
 
 
 Created 2006-07-28 by 
-Jesper Rønn-Jensen http://justaddwater.dk/ 
+Jesper Rønn-Jensen, [justaddwater.dk](http://justaddwater.dk/)
 http://rubyforge.org/projects/l10n-simplified/
 http://agilewebdevelopment.com/plugins/localization_simplified
