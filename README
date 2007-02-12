@@ -98,6 +98,7 @@ I added FIXME notes in the code to indicate where I also could use help.
 * Create rdoc in UTF-8 format and not including every lang-file (only lang_en.rb)
 * Rake task that modifies all view-files and converts them to UTF-8 
 * Also a task that modifies all generators to use UTF-8
+* Create gem file for easy distribution (and automatic plugin discovery in tools like RadRails)
 
 === DONE 
 * Added Norwegian (thanks Fredrik Bach)
