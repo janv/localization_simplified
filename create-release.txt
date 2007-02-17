@@ -1,11 +1,9 @@
-cd ..
-svn export l10n-simplified export\l10n-simplified-0.8
-(right-click to create zip file)
-FIXME make a rake task and 
-
-cd export
-tar -czf l10n-simplified-0.8.tar.gz l10n-simplified-0.8
-
+# ==========
+# create release with rake task
+# ==========
+1. set version number in ./version.rb
+2. rake package
+(alternative: rake repackage and rake clobber_package)
 
 # ==========
 # release file on rubyforge
