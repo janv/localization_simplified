@@ -100,6 +100,7 @@ I added FIXME notes in the code to indicate where I also could use help.
 * Create gem file for easy distribution (and automatic plugin discovery in tools like RadRails)
 
 === DONE 
+* Lang_it file must be UTF-8 encoded (thanks Fabio Bonelli)
 * Added rake task for creating a release "rake package"
 * Fixed rake task for generating rdoc in UTF-8 format
 * Added Norwegian (thanks Fredrik Bach)
