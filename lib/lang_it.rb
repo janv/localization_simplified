@@ -20,18 +20,18 @@ module LocalizationSimplified
     # of "error" and "errors" in the bottom of this file
     # 
     ErrorMessages = {
-      :inclusion           => "non è incluso nella lista",
-      :exclusion           => "è riservato",
-      :invalid             => "non è valido",
+      :inclusion           => "non Ã¨ incluso nella lista",
+      :exclusion           => "Ã¨ riservato",
+      :invalid             => "non Ã¨ valido",
       :confirmation        => "doesn't match confirmation",
       :accepted            => "deve essere accettato",
-      :empty               => "non può essere vuoto",
-      :blank               => "è richiesto",# alternate, formulation: "is required"
-      :too_long            => "è troppo lungo (massimo %d caratteri)",
-      :too_short           => "è troppo corto (minimo %d caratteri)",
-      :wrong_length        => "è della lunghezza sbagliata (dovrebbe essere di %d caratteri)",
-      :taken               => "è già stato assegnato",
-      :not_a_number        => "non è un numero",
+      :empty               => "non puÃ² essere vuoto",
+      :blank               => "Ã¨ richiesto",# alternate, formulation: "is required"
+      :too_long            => "Ã¨ troppo lungo (massimo %d caratteri)",
+      :too_short           => "Ã¨ troppo corto (minimo %d caratteri)",
+      :wrong_length        => "Ã¨ della lunghezza sbagliata (dovrebbe essere di %d caratteri)",
+      :taken               => "Ã¨ giÃ  stato assegnato",
+      :not_a_number        => "non Ã¨ un numero",
       #Jespers additions:
       :error_translation   => "errore",
       :error_header        => "%s impedisce a %s di essere salvato",
@@ -62,7 +62,7 @@ module LocalizationSimplified
     # Currently (as of version 1.1.6), Rails doesn't use daynames
     Monthnames = [nil] + %w( Gennaio Febbraio Marzo Aprile Maggio Giugno Luglio
                            Agosto Settembre Ottobre Novembre Dicembre )
-    Daynames = %w( Domenica Lunedì Martedì Marcoledì Giovedì Venerdì Sabato )
+    Daynames = %w( Domenica LunedÃ¬ MartedÃ¬ MarcoledÃ¬ GiovedÃ¬ VenerdÃ¬ Sabato )
     AbbrMonthnames = [nil] + %w( Gen Feb Mar Apr Mag Giu
                                 Lug Ago Set Ott Nov Dic )
     AbbrDaynames = %w( Dom Lun Mar Mer Gio Ven Sab )
@@ -92,7 +92,7 @@ module LocalizationSimplified
     # CurrencyOptions are used as default for +Number#to_currency()+
     # http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#M000449
     CurrencyOptions = {
-      :unit      => "¤",
+      :unit      => "Â¤",
       :separator => ",",             #unit separator (between integer part and fraction part)
       :delimiter => ".",             #delimiter between each group of thousands. Example: 1.234.567 
       :order     => [:unit, :number] #order is at present unsupported in Rails
