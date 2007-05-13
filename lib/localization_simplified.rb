@@ -188,8 +188,9 @@ class Time
   # Originally, its <tt>:default  => "%a, %d %b %Y %H:%M:%S %z"</tt> (RFC2822 names), but as it can be
   # modified in this plugin, and we can end up with a different file format in logfiles, etc
   def strftime(date)
-    LocalizationSimplified::localize_strftime(date, self)
-    old_strftime(date)
+    tmpdate=date.dup
+    LocalizationSimplified::localize_strftime(tmpdate, self)
+    old_strftime(tmpdate)
   end
 end
 
