@@ -60,7 +60,7 @@ module LocalizationSimplified
     # (+date_select+ and +datetime_select+ )
     # Currently (as of version 1.1.6), Rails doesn't use daynames
     Monthnames     = [nil] + %w{Januari Februari Maart April Mei Juni Juli Augustus September Oktober November December}
-    AbbrMonthnames = [nil] + %w{Jan Feb Mar Apr Mei Jun Jul Aug Sep Okt Nov Dec}
+    AbbrMonthnames = [nil] + %w{Jan Feb Maa Apr Mei Jun Jul Aug Sep Okt Nov Dec}
     Daynames       = %w{Zondag Maandag Dinsdag Woensdag Donderdag Vrijdag Zaterdag}
     AbbrDaynames   = %w{Zo Ma Di Wo Do Vr Za}
     
