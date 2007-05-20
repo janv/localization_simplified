@@ -21,7 +21,9 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.title    = 'LocalizationSimplified'
   rdoc.options << '--line-numbers' << '--inline-source' << '--charset=UTF-8'
   rdoc.rdoc_files.include('README')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+  rdoc.rdoc_files.include('lib/localization_simplified.rb')
+  rdoc.rdoc_files.include('lib/lang_en.rb')
+  #rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
 
