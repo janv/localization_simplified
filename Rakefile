@@ -27,6 +27,11 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
 end
 
 
+# TODO: look at http://mandhro.com/2006/07/03/publising-rails-plug-ins-with-rake/
+# that can probably also release to RubyForge
+# TODO: the Hoe plugin can probably also do that 
+# see http://seattlerb.rubyforge.org/hoe/ or
+# http://drnicwilliams.com/2006/10/11/generating-new-gems/
 desc 'Create release packages for the l10n_simplified plugin'
 Rake::PackageTask.new("l10n-simplified", L10N_VERSION) do |p|
   p.need_tar = true
