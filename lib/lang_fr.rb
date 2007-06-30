@@ -6,7 +6,7 @@
 module LocalizationSimplified
   About = {
     :lang => "fr",
-    :updated => "2006-09-07"
+    :updated => "2007-06-17"
   }
 
   class ActiveRecord
@@ -20,7 +20,7 @@ module LocalizationSimplified
     # of "error" and "errors" in the bottom of this file
     # 
     ErrorMessages = {
-      :inclusion           => "n'est pas inclut dans la liste",
+      :inclusion           => "n'est pas inclus dans la liste",
       :exclusion           => "est réservé",
       :invalid             => "est invalide",
       :confirmation        => "ne correspond pas à la confirmation",
@@ -28,9 +28,9 @@ module LocalizationSimplified
       :empty               => "ne peut pas être vide",
       :blank               => "ne peut pas être vierge",# alternate, formulation: "is required"
       :too_long            => "est trop long (%d caractères maximum)",
-      :too_short           => "est trop court(%d caractères minimum)",
+      :too_short           => "est trop court (%d caractères minimum)",
       :wrong_length        => "n'est pas de la bonne longueur (devrait être de %d caractères)",
-      :taken               => "est déjà prit",
+      :taken               => "est déjà pris",
       :not_a_number        => "n'est pas le nombre",
       #Jespers additions:
       :error_translation   => "erreur",
@@ -47,7 +47,7 @@ module LocalizationSimplified
       :less_than_a_minute  => "moins d'une minute",
       :one_minute          => "1 minute",
       :x_minutes           => "%d minutes",
-      :one_hour            => "à peut près 1 heure",
+      :one_hour            => "à peu près 1 heure",
       :x_hours             => "à peu près %d heures",
       :one_day             => "1 jour",
       :x_days              => "%d jours",
@@ -61,7 +61,7 @@ module LocalizationSimplified
     # (+date_select+ and +datetime_select+ )
     # Currently (as of version 1.1.6), Rails doesn't use daynames
     Monthnames     = [nil] + %w{Janvier Février Mars Avril Mai Juin Juillet Août Septembre Octobre Novembre Decembre}
-    AbbrMonthnames = [nil] + %w{Jan Fev Mar Avr Mai Jui Jul Aoû Sep Oct Nov Dec}
+    AbbrMonthnames = [nil] + %w{Jan Fév Mar Avr Mai Jui Jul Aoû Sep Oct Nov Déc}
     Daynames       = %w{Dimanche Lundi Mardi Mercredi Jeudi Vendredi Samedi}
     AbbrDaynames   = %w{Dim Lun Mar Mer Jeu Ven Sam}
     
@@ -69,20 +69,19 @@ module LocalizationSimplified
     # These are sent to strftime that Ruby's date and time handlers use internally
     # Same options as php (that has a better list: http://www.php.net/strftime )
     DateFormats = {
-      :default  => "%Y-%m-%d",
-      :short    => "%b %e",
-      :long     => "%B %e, %Y"
+      :default  => "%d-%m-%Y",
+      :short    => "%e %b",
+      :long     => "%e %B %Y"
     }
-
     TimeFormats = {
       :default  => "%a, %d %b %Y %H:%M:%S %z",
       :short    => "%d %b %H:%M",
-      :long     => "%B %d, %Y %H:%M"
+      :long     => "%d %B %Y %H:%M"
     }
     # Set the order of +date_select+ and +datetime_select+ boxes
     # Note that at present, the current Rails version only supports ordering of date_select boxes
     DateSelectOrder = {
-      :order    => [:year, :month, :day] #default Rails is US ordered: :order => [:year, :month, :day]
+      :order    => [:day, :month, :year] #default Rails is US ordered: :order => [:year, :month, :day]
     }
   end
 
@@ -91,9 +90,9 @@ module LocalizationSimplified
     # http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#M000449
     CurrencyOptions = {
       :unit      => "€",
-      :separator => ".",             #unit separator (between integer part and fraction part)
-      :delimiter => ",",             #delimiter between each group of thousands. Example: 1.234.567 
-      :order     => [:unit, :number] #order is at present unsupported in Rails
+      :separator => ",",             #unit separator (between integer part and fraction part)
+      :delimiter => " ",             #delimiter between each group of thousands. Example: 1.234.567 
+      :order     => [:number, :unit] #order is at present unsupported in Rails
     }
   end
 
@@ -102,7 +101,7 @@ module LocalizationSimplified
     # http://api.rubyonrails.org/classes/ActiveSupport/CoreExtensions/Array/Conversions.html#M000274
     ToSentenceTexts = {
       :connector => 'et',
-      :skip_last_comma => false
+      :skip_last_comma => true
     }
   end
 end

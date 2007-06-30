@@ -100,6 +100,7 @@ I added FIXME notes in the code to indicate where I also could use help.
 * Create gem file for easy distribution (and automatic plugin discovery in tools like RadRails)
 
 === DONE 
+* French lang file updated (thanks Bruno Michel)
 * Added Serbian (thanks Slobodan Kovacevic)
 * Lang_it file must be UTF-8 encoded (thanks Fabio Bonelli)
 * Added rake task for creating a release "rake package"
