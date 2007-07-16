@@ -40,6 +40,7 @@ It could be a good idea to take a look at the [comparison chart](http://wiki.rub
 
 === Supported languages
 Currently supported languages:
+* Czech
 * Danish
 * Dutch
 * English (for running test cases and comparing to normal texts)
@@ -100,6 +101,7 @@ I added FIXME notes in the code to indicate where I also could use help.
 * Create gem file for easy distribution (and automatic plugin discovery in tools like RadRails)
 
 === DONE 
+* Czech translation by Karel Minařík
 * French lang file updated (thanks Bruno Michel)
 * Added Serbian (thanks Slobodan Kovacevic)
 * Lang_it file must be UTF-8 encoded (thanks Fabio Bonelli)
