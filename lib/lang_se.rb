@@ -35,7 +35,7 @@ module LocalizationSimplified
       #Jespers additions:
       :error_translation   => "fel",
       :error_header        => "%s förhindrade %s från at sparse",
-      :error_subheader     => "Problemar met dissa felterne:"
+      :error_subheader     => "Problem med dessa fält:"
     }
   end
 
