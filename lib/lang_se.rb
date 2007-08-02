@@ -6,7 +6,7 @@
 module LocalizationSimplified
   About = {
     :lang => "se",
-    :updated => "2006-09-07"
+    :updated => "2007-08-02"
   }
 
   class ActiveRecord
@@ -25,8 +25,8 @@ module LocalizationSimplified
       :invalid             => "Är ogiltigt",
       :confirmation        => "stämmer inte övererens",
       :accepted            => "måste vara accepterad",
-      :empty               => "för ej vara tom",
-      :blank               => "för ej vara blank",
+      :empty               => "får ej vara tom",
+      :blank               => "får ej vara blank",
       :too_long            => "Är för lång (maximum är %d tecken)",
       :too_short           => "Är för kort (minimum är %d tecken)",
       :wrong_length        => "har fel längd (ska vara %d tecken)",
