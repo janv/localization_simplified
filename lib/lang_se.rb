@@ -26,7 +26,7 @@ module LocalizationSimplified
       :confirmation        => "stämmer inte övererens",
       :accepted            => "måste vara accepterad",
       :empty               => "får ej vara tom",
-      :blank               => "får ej vara blank",
+      :blank               => "får ej vara blank",# alternate formulation: "is required"
       :too_long            => "Är för lång (maximum är %d tecken)",
       :too_short           => "Är för kort (minimum är %d tecken)",
       :wrong_length        => "har fel längd (ska vara %d tecken)",

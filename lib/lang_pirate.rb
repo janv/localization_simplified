@@ -26,7 +26,7 @@ module LocalizationSimplified
       :confirmation        => "doesn't match confirmation",
       :accepted            => "must be accepted, arrrrh!",
       :empty               => "no nay ne'er be empty",
-      :blank               => "no nay be blank, ye scurvy dog!",# alternate, formulation: "is required"
+      :blank               => "no nay be blank, ye scurvy dog!",# alternate formulation: "is required"
       :too_long            => "be too vastly in length (no more than %d characters or ye drivin' me nuts)",
       :too_short           => "be way too short (at least %d characters or ye drivin' me nuts)",
       :wrong_length        => "be the wrong length (should be %d characters)",

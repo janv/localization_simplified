@@ -1,12 +1,12 @@
 # lang_it.rb
-# Traduzione italiana.
+# Traduzione italiana by  Michele Franzin
 
 
 
 module LocalizationSimplified
   About = {
     :lang => "it",
-    :updated => "2006-09-16"
+    :updated => "2006-10-08"
   }
 
   class ActiveRecord
@@ -26,7 +26,7 @@ module LocalizationSimplified
       :confirmation        => "doesn't match confirmation",
       :accepted            => "deve essere accettato",
       :empty               => "non può essere vuoto",
-      :blank               => "è richiesto",# alternate, formulation: "is required"
+      :blank               => "è richiesto",# alternate formulation: "is required"
       :too_long            => "è troppo lungo (massimo %d caratteri)",
       :too_short           => "è troppo corto (minimo %d caratteri)",
       :wrong_length        => "è della lunghezza sbagliata (dovrebbe essere di %d caratteri)",

@@ -26,7 +26,7 @@ module LocalizationSimplified
       :confirmation        => "ei vastaa vahvistusta",
       :accepted            => "on hyväksyttävä",
       :empty               => "ei voi olla tyhjä",
-      :blank               => "ei voi olla tyhjä",
+      :blank               => "ei voi olla tyhjä",# alternate formulation: "is required"
       :too_long            => "on liian pitkä (maksimi on %d merkkiä)",
       :too_short           => "on liian lyhyt (minimi on %d merkkiä)",
       :wrong_length        => "on väärän pituinen (oikea pituus %d merkkiä)",

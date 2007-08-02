@@ -26,7 +26,7 @@ module LocalizationSimplified
       :confirmation        => "is niet hetzelfde als de verificatie",
       :accepted            => "moet worden geaccepteerd",
       :empty               => "mag niet leeg zijn",
-      :blank               => "mag niet blanko zijn",# alternate, formulation: "is required"
+      :blank               => "mag niet blanko zijn",# alternate formulation: "is required"
       :too_long            => "is te lang (maximum is %d karakters)",
       :too_short           => "is te kort (minimum is %d karakters)",
       :wrong_length        => "is de verkeerde lengte (dient %d karakters te zijn)",

@@ -6,7 +6,7 @@
 module LocalizationSimplified
   About = {
     :lang => "en",
-    :updated => "2006-09-01"
+    :updated => "2007-08-02"
   }
 
   class ActiveRecord
@@ -26,7 +26,7 @@ module LocalizationSimplified
       :confirmation        => "doesn't match confirmation",
       :accepted            => "must be accepted",
       :empty               => "can't be empty",
-      :blank               => "can't be blank",# alternate, formulation: "is required"
+      :blank               => "can't be blank",# alternate formulation: "is required"
       :too_long            => "is too long (maximum is %d characters)",
       :too_short           => "is too short (minimum is %d characters)",
       :wrong_length        => "is the wrong length (should be %d characters)",

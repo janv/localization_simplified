@@ -27,7 +27,7 @@ module LocalizationSimplified
       :confirmation        => "nije isti kao potvrda", #nesrećan prevod, treba da bude "doesn't match confirmation"
       :accepted            => "mora biti prihvaćen",
       :empty               => "ne može biti prazan",
-      :blank               => "je obavezan",
+      :blank               => "je obavezan",# alternate formulation: "is required"
       :too_long            => "je previše dug (maksimum je %d znakova)",
       :too_short           => "je suviše kratak (minimum je %d znakova)",
       :wrong_length        => "je pogrešne dužine (trebalo bi da bude %d znakova)",

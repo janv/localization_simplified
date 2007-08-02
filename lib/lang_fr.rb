@@ -26,7 +26,7 @@ module LocalizationSimplified
       :confirmation        => "ne correspond pas à la confirmation",
       :accepted            => "doit être accepté",
       :empty               => "ne peut pas être vide",
-      :blank               => "ne peut pas être vierge",# alternate, formulation: "is required"
+      :blank               => "ne peut pas être vierge",# alternate formulation: "is required"
       :too_long            => "est trop long (%d caractères maximum)",
       :too_short           => "est trop court (%d caractères minimum)",
       :wrong_length        => "n'est pas de la bonne longueur (devrait être de %d caractères)",

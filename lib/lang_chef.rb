@@ -26,7 +26,7 @@ module LocalizationSimplified
       :confirmation        => "duesn't metch cunffurmeshun",
       :accepted            => "moost be-a eccepted",
       :empty               => "cun't be-a impty",
-      :blank               => "ees reeequired",# alternate, formulation: "is required"
+      :blank               => "ees reeequired",# alternate formulation: "is required"
       :too_long            => "is tuu lung (mexeemoom is %d cherecters)",
       :too_short           => "is tuu shurt (meenimoom is %d cherecters)",
       :wrong_length        => "is zee vrung lengt (shuoold be-a %d cherecters)",

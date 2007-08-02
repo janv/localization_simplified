@@ -6,7 +6,7 @@
 module LocalizationSimplified
   About = {
     :lang => "da",
-    :updated => "2006-09-07"
+    :updated => "2007-08-02"
   }
 
   class ActiveRecord
@@ -26,7 +26,7 @@ module LocalizationSimplified
       :confirmation        => "matcher ikke med bekræftelsen",
       :accepted            => "skal accepteres",
       :empty               => "kan ikke være tom",
-      :blank               => "skal udfyldes",
+      :blank               => "skal udfyldes",# alternate formulation: "is required"
       :too_long            => "er for langt (max er %d tegn)",
       :too_short           => "er for kort (minimum er %d tegn)",
       :wrong_length        => "har forkert længde (skal være %d tegn)",

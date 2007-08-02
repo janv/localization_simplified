@@ -25,7 +25,7 @@ module LocalizationSimplified
       :confirmation        => "ne correspond pas à la confirmation",
       :accepted            => "doit être accepté",
       :empty               => "ne peut pas être vide",
-      :blank               => "ne peut pas être laissé à blanc",
+      :blank               => "ne peut pas être laissé à blanc",# alternate formulation: "is required"
       :too_long            => "dépasse la longueur permise (le maximum étant de %d caractères)",
       :too_short           => "est trop court (le minimum étant de %d caractères)",
       :wrong_length        => "n'est pas de la bonne longueur (doit être de %d caractères)",

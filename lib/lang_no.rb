@@ -20,17 +20,17 @@ module LocalizationSimplified
     # 
     ErrorMessages = {
       :inclusion           => "finnes ikke i listen",
-      :exclusion           => "Er reservert",
-      :invalid             => "Er ikke gyldig",
+      :exclusion           => "er reservert",
+      :invalid             => "er ikke gyldig",
       :confirmation        => "stemmer ikke",
       :accepted            => "må være acceptert",
       :empty               => "kan ikke være tom",
-      :blank               => "kan ikke være tom",
-      :too_long            => "Er for lang (maximum er %d tegn)",
-      :too_short           => "Er for kort (minimum er %d tegn)",
+      :blank               => "kan ikke være tom",# alternate formulation: "is required"
+      :too_long            => "er for lang (maximum er %d tegn)",
+      :too_short           => "er for kort (minimum er %d tegn)",
       :wrong_length        => "har feil lengde (skal være %d tegn)",
       :taken               => "er allerede brukt",
-      :not_a_number        => "Er ikke et nummer",
+      :not_a_number        => "er ikke et nummer",
       #Jespers additions:
       :error_translation   => "feil",
       :error_header        => "%s hindret %s fra å bli lagret",

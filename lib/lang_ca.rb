@@ -26,7 +26,7 @@ module LocalizationSimplified
       :confirmation        => "no coincideix amb la confirmació",
       :accepted            => "ha de ser acceptat",
       :empty               => "no pot ser buit",
-      :blank               => "no pot estar en blanc",# alternate, formulation: "is required"
+      :blank               => "no pot estar en blanc",# alternate formulation: "is required"
       :too_long            => "és massa llarg (el màxim és %d caracters)",
       :too_short           => "és massa curt (el mínim és %d caracters)",
       :wrong_length        => "no té la llàrgaria correcta (hauria de ser de %d caracters)",

@@ -5,7 +5,7 @@
 module LocalizationSimplified
   About = {
     :lang => "cs",
-    :updated => "2007-07-16 12:23"
+    :updated => "2007-07-16"
   }
 
   class ActiveRecord
@@ -25,7 +25,7 @@ module LocalizationSimplified
       :confirmation        => "nebylo potvrzeno",
       :accepted            => "musí být potvrzeno",
       :empty               => "nesmí být prázdný/é",
-      :blank               => "je povinná položka",# alternate, formulation: "is required"
+      :blank               => "je povinná položka",# alternate formulation: "is required"
       :too_long            => "je příliš dlouhá/ý (max. %d znaků)",
       :too_short           => "je příliš krátký/á (min. %d znaků)",
       :wrong_length        => "nemá správnou délku (očekáváno %d znaků)",
