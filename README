@@ -101,6 +101,7 @@ I added FIXME notes in the code to indicate where I also could use help.
 * Create gem file for easy distribution (and automatic plugin discovery in tools like RadRails)
 
 === CHANGELOG
+* Italian translation adjustments (thanks Michele Franzin)
 * Fixed translation error in Swedish translation (thanks Ingemar Edsborn)
 * Czech translation by Karel Minařík
 * French lang file updated (thanks Bruno Michel)
