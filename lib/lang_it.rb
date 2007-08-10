@@ -23,7 +23,7 @@ module LocalizationSimplified
       :inclusion           => "non è incluso nella lista",
       :exclusion           => "è riservato",
       :invalid             => "non è valido",
-      :confirmation        => "non corrisponde alla conferma",,
+      :confirmation        => "non corrisponde alla conferma",
       :accepted            => "deve essere accettato",
       :empty               => "non può essere vuoto",
       :blank               => "è richiesto",# alternate formulation: "is required"
@@ -63,7 +63,8 @@ module LocalizationSimplified
     Monthnames = [nil] + %w{ Gennaio Febbraio Marzo Aprile Maggio Giugno Luglio Agosto Settembre Ottobre Novembre Dicembre }
     Daynames = %w{ Domenica Lunedì Martedì Mercoledì Giovedì Venerdì Sabato }
     AbbrMonthnames = [nil] + %w{ Gen Feb Mar Apr Mag Giu Lug Ago Set Ott Nov Dic }
-        
+    AbbrDaynames = %w{ Dom Lun Mar Mer Gio Ven Sab }
+
     # Date and time format syntax explained in http://www.rubycentral.com/ref/ref_c_time.html#strftime
     # These are sent to strftime that Ruby's date and time handlers use internally
     # Same options as php (that has a better list: http://www.php.net/strftime )
@@ -115,18 +116,3 @@ end
 #   inflect.irregular 'person people'
 #   inflect.uncountable %w( information )
 # end
-# ~> -:26: syntax error, unexpected ',', expecting '}'
-# ~> -:27: syntax error, unexpected ',', expecting kEND
-# ~> -:28: syntax error, unexpected ',', expecting kEND
-# ~> -:29: syntax error, unexpected ',', expecting kEND
-# ~>       :blank               => "è richiesto",# alternate formulation: "is required"
-# ~>                                              ^
-# ~> -:30: syntax error, unexpected ',', expecting kEND
-# ~> -:31: syntax error, unexpected ',', expecting kEND
-# ~> -:32: syntax error, unexpected ',', expecting kEND
-# ~> -:33: syntax error, unexpected ',', expecting kEND
-# ~> -:34: syntax error, unexpected ',', expecting kEND
-# ~> -:36: syntax error, unexpected ',', expecting kEND
-# ~> -:37: syntax error, unexpected ',', expecting kEND
-# ~> -:39: syntax error, unexpected '}', expecting kEND
-# ~> -:120: syntax error, unexpected $end, expecting kEND
