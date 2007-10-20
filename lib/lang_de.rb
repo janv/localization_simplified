@@ -70,14 +70,15 @@ module LocalizationSimplified
     # Same options as php (that has a better list: http://www.php.net/strftime )
     DateFormats = {
       :default  => "%Y-%m-%d",
-      :short    => "%b %e",
-      :long     => "%B %e, %Y"
+      :short    => "%d. %b.",
+      :long     => "%d. %B %Y"
     }
 
     TimeFormats = {
       :default  => "%A, %d %B %Y %H:%M %Z",
-      :short    => "%d %b. %H:%M",
-      :long     => "%d %B %Y, %H:%M"
+      :default  => "%A, %d. %B %Y %H:%M %Z",
+      :short    => "%d. %b. %H:%M",
+      :long     => "%d. %B %Y, %H:%M"
     }
     # Set the order of +date_select+ and +datetime_select+ boxes
     # Note that at present, the current Rails version only supports ordering of date_select boxes
