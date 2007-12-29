@@ -75,7 +75,6 @@ module LocalizationSimplified
     }
 
     TimeFormats = {
-      :default  => "%A, %d %B %Y %H:%M %Z",
       :default  => "%A, %d. %B %Y %H:%M %Z",
       :short    => "%d. %b. %H:%M",
       :long     => "%d. %B %Y, %H:%M"
