@@ -51,6 +51,7 @@ Currently supported languages:
 * Italian
 * Korean
 * Norwegian
+* Russian
 * Spanish
 * Spanish (argentinian)
 * Swedish
@@ -101,6 +102,7 @@ I added FIXME notes in the code to indicate where I also could use help.
 * Create gem file for easy distribution (and automatic plugin discovery in tools like RadRails)
 
 === CHANGELOG
+* Russian translation (thanks Denis Pankratov)
 * Corrected German date/time format (thanks Christian W Zuckschwerdt)
 * Added Portugese translation (thanks Carlos Afonso)
 * Italian translation adjustments (thanks Michele Franzin)
