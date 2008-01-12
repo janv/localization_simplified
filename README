@@ -92,6 +92,8 @@ I added FIXME notes in the code to indicate where I also could use help.
 
  
 === TODO / wishlist
+* Add environment var for language. If var exists, use that locale definition to 
+  load the proper language
 * A Rails application for testing L10n-simplified. This is top of my wish-list. 
   I'd like it to contain a test suite testing ActiveRecord errors, datehelper, necessary
   numberhelper etc. 
