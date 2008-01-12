@@ -18,7 +18,6 @@ process I can decide to change to a more advanced localization plugin (if necess
 
 === What it does
 This plugin modifies the following most used helpers for Rails
-* Sets UTF-8 connection to database (known to work with MySQL and PostgreSQL)
 * Localized monthnames on date_select etc. (changing the order of Y-M-D, on date_select and datetime_select from 0.7)
 * Localized ActiveRecord errors (and error headings)
 * Localized distance_of_time_in_words
@@ -38,6 +37,18 @@ It could be a good idea to take a look at the [comparison chart](http://wiki.rub
 * For Rails 1.1.x or below, use version 0.7.1 of this plugin
 * For Rails 1.2 or above, use version 0.8 (or higher) of this plugin
 
+=== Download code
+* Project homepage: http://rubyforge.org/projects/l10n-simplified/
+* Subversion access: svn checkout svn://rubyforge.org/var/svn/l10n-simplified
+* Browse: http://rubyforge.org/plugins/scmsvn/viewcvs.php/?root=l10n-simplified
+
+
+
+=== Usage:
+in init.rb, set your language. That's it. Now your db connection is running UTF-8 and standard Rails output is localized.
+
+If your view files contains text containing non-English characters (such as ß,ö,ñ or å), you probably also want to save your files as UTF-8.
+
 === Supported languages
 Currently supported languages:
 * Czech
@@ -51,26 +62,15 @@ Currently supported languages:
 * Italian
 * Korean
 * Norwegian
+* Portugese 
 * Russian
+* Serbian
 * Spanish
 * Spanish (argentinian)
 * Swedish
 * Swedish Chef, and 
 * Pirate talk (just for the fun of it)
 * any other language you want. Just dump your translation in the /lib folder 
-
-=== Download code
-* Project homepage: http://rubyforge.org/projects/l10n-simplified/
-* Subversion access: svn checkout svn://rubyforge.org/var/svn/l10n-simplified
-* Browse: http://rubyforge.org/plugins/scmsvn/viewcvs.php/?root=l10n-simplified
-
-
-
-=== Usage:
-in init.rb, set your language. That's it. Now your db connection is running UTF-8 and standard Rails output is localized.
-
-If your view files contains text containing non-English characters (such as ß,ö,ñ or å), you probably also want to save your files as UTF-8.
-
 
 === Installation:
 
@@ -89,6 +89,7 @@ but chances are that I will unless it bloats the code here completely or makes
 code harder to maintain.
 
 I added FIXME notes in the code to indicate where I also could use help.
+
  
 === TODO / wishlist
 * A Rails application for testing L10n-simplified. This is top of my wish-list. 
