@@ -214,10 +214,11 @@ ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS.merge!(Localizati
 ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!(LocalizationSimplified::DateHelper::TimeFormats)
 
 
-# Modify Actioncontroller to always use UTF-8
+# Modify Actioncontroller to always use UTF-8 (Not needed from Rails 1.2+)
 # Currently this modifies MySQL. Please add other databases you find necessary
+# From Rails 1.2, UTF-8 charset is default so I leave this in the code in case you need it
 class ActionController::Base
-   before_filter :configure_charsets
+#   before_filter :configure_charsets
 
   def configure_charsets(charset='utf-8')
     # Set connection charset. MySQL 4.0 doesn't support this so it
