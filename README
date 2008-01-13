@@ -1,4 +1,5 @@
-﻿= Localization Simplified (aka LocalizationSimplified or L10n-simplified)
+﻿
+= Localization Simplified (aka LocalizationSimplified or L10n-simplified)
 
 Localization Simplified plugin for Ruby on Rails. Really simple localization. Written by Jesper Rønn-Jensen ( http://justaddwater.dk/ )
 
@@ -75,7 +76,9 @@ Currently supported languages:
 === Installation:
 
 1. Just copy this plugin into your /vendor/plugins/ folder
-2. Choose your lang-file in init.rb (default is Danish because I am Danish)
+2. Set your language in environment.rb 
+   L10N_LANG = :es
+   (Danish is default because I am Danish)
 3. no step three :)
 
 
@@ -92,8 +95,6 @@ I added FIXME notes in the code to indicate where I also could use help.
 
  
 === TODO / wishlist
-* Add environment var for language. If var exists, use that locale definition to 
-  load the proper language
 * A Rails application for testing L10n-simplified. This is top of my wish-list. 
   I'd like it to contain a test suite testing ActiveRecord errors, datehelper, necessary
   numberhelper etc. 
