@@ -1,3 +1,4 @@
+* Swedish translation typos fixed (thanks Peter Hellberg)
 * --- release 0.9 (2008-01-13) ---
 * Possible to set language in environment.rb: L10N_LANG = :de
 * UTF-8 database charset configuration is default in Rails 1.2+ and 2.0, so not needed in plugin more.

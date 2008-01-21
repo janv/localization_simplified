@@ -21,20 +21,20 @@ module LocalizationSimplified
     # 
     ErrorMessages = {
       :inclusion           => "finns inte i listan",
-      :exclusion           => "Är reserverat",
-      :invalid             => "Är ogiltigt",
+      :exclusion           => "är reserverat",
+      :invalid             => "är ogiltigt",
       :confirmation        => "stämmer inte övererens",
       :accepted            => "måste vara accepterad",
       :empty               => "får ej vara tom",
       :blank               => "får ej vara blank",# alternate formulation: "is required"
-      :too_long            => "Är för lång (maximum är %d tecken)",
-      :too_short           => "Är för kort (minimum är %d tecken)",
+      :too_long            => "är för lång (maximum är %d tecken)",
+      :too_short           => "är för kort (minimum är %d tecken)",
       :wrong_length        => "har fel längd (ska vara %d tecken)",
       :taken               => "har redan tagits",
-      :not_a_number        => "Är ej ett nummer",
+      :not_a_number        => "är ej ett nummer",
       #Jespers additions:
       :error_translation   => "fel",
-      :error_header        => "%s förhindrade %s från at sparse",
+      :error_header        => "%s förhindrade %s från att sparas",
       :error_subheader     => "Problem med dessa fält:"
     }
   end
