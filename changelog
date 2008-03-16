@@ -1,3 +1,4 @@
+* Added Simplified Chineese translation (thanks Capitan Zhan)
 * Swedish translation typos fixed (thanks Peter Hellberg)
 * --- release 0.9 (2008-01-13) ---
 * Possible to set language in environment.rb: L10N_LANG = :de
