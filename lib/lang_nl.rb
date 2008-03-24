@@ -1,12 +1,12 @@
 # lang_nl.rb
-# Dutch translation by Jeroen Houben
+# Dutch translation by Jeroen Houben, Frank Groeneveld
 
 
 
 module LocalizationSimplified
   About = {
     :lang => "nl",
-    :updated => "2006-08-23"
+    :updated => "2008-03-24"
   }
 
   class ActiveRecord
@@ -26,7 +26,7 @@ module LocalizationSimplified
       :confirmation        => "is niet hetzelfde als de verificatie",
       :accepted            => "moet worden geaccepteerd",
       :empty               => "mag niet leeg zijn",
-      :blank               => "mag niet blanko zijn",# alternate formulation: "is required"
+      :blank               => "is verplicht",# alternate formulation: "is required"
       :too_long            => "is te lang (maximum is %d karakters)",
       :too_short           => "is te kort (minimum is %d karakters)",
       :wrong_length        => "is de verkeerde lengte (dient %d karakters te zijn)",
