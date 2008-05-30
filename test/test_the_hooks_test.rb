@@ -9,6 +9,7 @@ require 'rubygems'
 require 'test/unit'
 
 require 'active_record'
+require 'action_controller' # Required to load action_view, see http://www.ruby-forum.com/topic/144758
 require 'action_view'
 require 'active_support'
 
