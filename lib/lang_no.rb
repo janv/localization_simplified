@@ -23,7 +23,7 @@ module LocalizationSimplified
       :exclusion           => "er reservert",
       :invalid             => "er ikke gyldig",
       :confirmation        => "stemmer ikke",
-      :accepted            => "må være acceptert",
+      :accepted            => "må være akseptert",
       :empty               => "kan ikke være tom",
       :blank               => "kan ikke være tom",# alternate formulation: "is required"
       :too_long            => "er for lang (maximum er %d tegn)",
@@ -41,18 +41,18 @@ module LocalizationSimplified
   # Texts to override +distance_of_time_in_words()+
   class DateHelper
     Texts = {
-      :less_than_x_seconds => "mindre en %d sekunder",
-      :half_a_minute       => "et halvt minutt",
-      :less_than_a_minute  => "mindre en et minutt",
-      :one_minute          => "1 minutt",
+      :less_than_x_seconds => "mindre enn %d sekunder",
+      :half_a_minute       => "ett halvt minutt",
+      :less_than_a_minute  => "mindre en ett minutt",
+      :one_minute          => "ett minutt",
       :x_minutes           => "%d minutter",
-      :one_hour            => "cirka 1 timma",
-      :x_hours             => "cirka %d timmar",
-      :one_day             => "1 døgn",
+      :one_hour            => "omtrent en time",
+      :x_hours             => "omtrent %d timer",
+      :one_day             => "ett døgn",
       :x_days              => "%d døgn",
-      :one_month           => "1 måned",
+      :one_month           => "en måned",
       :x_months            => "%d måneder",
-      :one_year            => "1 år",
+      :one_year            => "ett år",
       :x_years             => "%d år"
     }
     
@@ -69,15 +69,15 @@ module LocalizationSimplified
     # These are sent to strftime that Ruby's date and time handlers use internally
     # Same options as php (that has a better list: http://www.php.net/strftime )
     DateFormats = {
-      :default  => "%Y-%m-%d",
-      :short    => "%b %e",
-      :long     => "%B %e, %Y"
+      :default  => "%d.%m.%Y",
+      :short    => "%e. %b",
+      :long     => "%e. %B, %Y"
     }
 
     TimeFormats = {
-      :default  => "%a, %d %b %Y %H:%M:%S %z",
-      :short    => "%d %b %H:%M",
-      :long     => "%B %d, %Y %H:%M"
+      :default  => "%a, %d. %b %Y %H:%M:%S %z",
+      :short    => "%d. %b %H:%M",
+      :long     => "%d. %B, %Y %H:%M"
     }
     # Set the order of +date_select+ and +datetime_select+ boxes
     # Note that at present, the current Rails version only supports ordering of date_select boxes
@@ -108,9 +108,8 @@ module LocalizationSimplified
   end
 end
 
-
 # Use the inflector below to pluralize "error" from
 # @@default_error_messages[:error_translation] above (if necessary)
- Inflector.inflections do |inflect|
-   inflect.uncountable %w( feil )
- end 
+Inflector.inflections do |inflect|
+  inflect.uncountable %w( feil )
+end
