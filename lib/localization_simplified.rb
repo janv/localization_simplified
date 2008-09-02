@@ -47,14 +47,21 @@ module ActionView
              end
            end
            messages = ActiveRecord:: Errors.default_error_messages
-           header_message = format( messages[:error_header], 
+           header_message = if options.has_key?(:header_message) 
+             options[:header_message] 
+           else
+             format( messages[:error_header], 
              pluralize(count, messages[:error_translation]), 
              (options[:object_name] || 
              	params.first).to_s.gsub("_", " "))
+           end
+           subheader = if options.has_key?(:message) then 
+             options[:message] else messages[:error_subheader] 
+           end
            error_messages = objects.map {|object| object.errors.full_messages.map {|msg| content_tag(:li, msg) } }
            content_tag(:div,
              content_tag(options[:header_tag] || :h2, header_message) <<
-               content_tag(:p, messages[:error_subheader]) <<
+               content_tag(:p, subheader) <<
                content_tag(:ul, error_messages),
              html
            )
