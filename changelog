@@ -1,3 +1,4 @@
+* Fixed gemfile generation not working (thanks Anders Carling)
 * Norwegian language file adjusted (Erlend Finvåg)
 * Added Catalan translation (thanks Lleïr Borràs i Metje)
 * Made initialization of Danish as default language and tests compatible with Rails 2.0.2 (Casper Fabricius)

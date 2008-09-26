@@ -5,7 +5,7 @@ require 'rake/packagetask'
 require 'rake/gempackagetask'
 
 require File.join(File.dirname(__FILE__), 'version')
-pkg_files = ["lib/**/*.rb", "test/**/*.rb", "*.rb", "MIT-LICENSE", "README", "Rakefile", "changelog"]
+pkg_files = FileList["lib/**/*.rb", "test/**/*.rb", "*.rb", "MIT-LICENSE", "README", "Rakefile", "changelog"]
 
 desc 'Default: run unit tests.'
 task :default => :test
@@ -56,8 +56,9 @@ spec = Gem::Specification.new do |s|
   s.email             = "jesperrr@gmail.com"
   s.homepage          = "http://rubyforge.org/projects/l10n-simplified"
   s.rubyforge_project = "l10n-simplified"
-# s.files             = 
- s.description        = %q{
+  s.files             = pkg_files
+  s.has_rdoc          = true
+  s.description       = %q{
    The goal is to have a dead simple plugin for one-language (non-english) Rails applications. 
    Many of the existing localization / internationalization plugins are too big for this and 
    hard to get started with. Just dump this plugin in /vendor/plugins/, set your language and 
@@ -68,5 +69,4 @@ end
 Rake::GemPackageTask.new(spec) do |pkg|
  pkg.need_zip = true
  pkg.need_tar = true
- pkg.package_files.include(pkg_files)
 end
