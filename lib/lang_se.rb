@@ -46,7 +46,7 @@ module LocalizationSimplified
       :half_a_minute       => "en halv minut",
       :less_than_a_minute  => "mindre än en minut",
       :one_minute          => "1 minut",
-      :x_minutes           => "%d minutter",
+      :x_minutes           => "%d minuter",
       :one_hour            => "ungefär 1 timma",
       :x_hours             => "ungefär %d timmar",
       :one_day             => "1 dygn",

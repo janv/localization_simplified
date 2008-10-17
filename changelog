@@ -1,3 +1,4 @@
+* Fixing typo in Swedish translation
 * Fixed Inflector deprecation (it was namespaced into ActiveSupport in Rails 2.1.1). The fix makes sure to retain backwards compatibility.
 * Fixed gemfile generation not working (thanks Anders Carling)
 * Norwegian language file adjusted (Erlend Finvåg)
