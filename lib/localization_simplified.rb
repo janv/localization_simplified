@@ -145,16 +145,16 @@ module ActionView
     module DateHelper
       alias_method :orig_date_select, :date_select
       # Blend default options with localized :order option
-      def date_select(object_name, method, options = {})
+      def date_select(object_name, method, options = {}, html_options = {})
         options.reverse_merge!(LocalizationSimplified::DateHelper::DateSelectOrder)
-        orig_date_select(object_name, method, options)
+        orig_date_select(object_name, method, options, html_options)
       end
 
       alias_method :orig_datetime_select, :datetime_select
       # Blend default options with localized :order option
-      def datetime_select(object_name, method, options = {})
+      def datetime_select(object_name, method, options = {}, html_options = {})
         options.reverse_merge!(LocalizationSimplified::DateHelper::DateSelectOrder)
-        orig_datetime_select(object_name, method, options)
+        orig_datetime_select(object_name, method, options, html_options)
       end
     end #module DateHelper
 
